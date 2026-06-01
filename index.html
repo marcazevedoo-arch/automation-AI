@@ -15,6 +15,9 @@
 </head>
 
 <body class="is-on-cover">
+  <!-- Watermark fixo do logo Galeria Holding · fica imóvel atrás dos slides -->
+  <div class="watermark" aria-hidden="true"></div>
+
   <!-- ============================================================
        NAV FIXA — 4 atos (índice condensado)
        ============================================================ -->
@@ -84,7 +87,7 @@
         <div class="section__label" data-reveal>Ato I · 01 · A Visão</div>
 
         <h1 class="cover__headline">
-          <span class="cover__line cover__line--mute" data-stagger="0">Não vamos otimizar a agência.</span>
+          <span class="cover__line cover__line--mute" data-stagger="0">Não vamos apenas otimizar a agência.</span>
           <span class="cover__line cover__line--accent" data-stagger="1">Vamos desenhar o sistema operacional que ditará como a holding compete e fatura nos próximos três anos.</span>
         </h1>
 
@@ -286,7 +289,7 @@
             <span class="lab-flow__role">Destino</span>
             <span class="lab-flow__entity">Galeria <strong>Holding</strong></span>
             <p class="lab-flow__why">
-              A segunda empresa herda tecnologia testada. <strong>Tempo de implementação reduzido pela metade.</strong>
+              As demais empresas herdam tecnologia testada. <strong>Tempo de implementação reduzido pela metade.</strong>
             </p>
           </div>
         </div>
@@ -305,7 +308,7 @@
           </article>
           <article class="reason-item">
             <span class="reason-item__num">02</span>
-            <p><strong>Metodologia documentada como IP.</strong> O conhecimento criado no laboratório vira playbook replicável para as demais empresas do grupo.</p>
+            <p><strong>Metodologia documentada como propriedade intelectual.</strong> O conhecimento criado no laboratório vira playbook replicável para as demais empresas do grupo.</p>
           </article>
           <article class="reason-item">
             <span class="reason-item__num">03</span>
@@ -323,33 +326,13 @@
         <header class="section__header">
           <div class="section__label" data-reveal>Ato II · 06 · Duas Frentes</div>
           <h2 class="h2 big-statement" data-reveal>
-            Os operadores mapeiam seus gargalos. Os engenheiros constroem as soluções.<br />
+            Nossa fórmula de sucesso: os operadores mapeiam seus gargalos. Os engenheiros constroem as soluções.<br />
             <span class="accent-text">Ninguém resiste à mudança porque ninguém foi deixado de fora do design.</span>
           </h2>
           <p class="section__sub" data-reveal>
-            Duas frentes integradas em retroalimentação contínua: a Evangelização capacita operadores a desenharem seus protótipos. A Automação productiza o que foi validado.
+            Duas frentes integradas em retroalimentação contínua: a Sala de Testes capacita operadores a desenharem seus protótipos. A Automação produtiza o que foi validado.
           </p>
         </header>
-
-        <div class="frentes" data-reveal>
-          <article class="frente frente--evang">
-            <span class="frente__tag">Evangelização</span>
-            <h3 class="frente__title">Metodologia proprietária de Reverse Discovery.</h3>
-            <p class="frente__body">
-              Capacitamos os próprios profissionais operacionais a mapearem seus gargalos, identificarem oportunidades de ganho de tempo e testarem protótipos em suas rotinas diárias.
-              <strong>Não trazemos consultores externos para desenhar processos teóricos.</strong>
-            </p>
-          </article>
-          <span class="frentes__loop" aria-hidden="true">⇄</span>
-          <article class="frente frente--auto">
-            <span class="frente__tag">Automação</span>
-            <h3 class="frente__title">Engenharia que productiza o protótipo validado.</h3>
-            <p class="frente__body">
-              O time técnico assume os protótipos aprovados pelo usuário final e os transforma em sistemas escaláveis, seguros e integrados.
-              <strong>Eliminamos o gerenciamento de mudança</strong>. A solução é desenhada por quem a utiliza.
-            </p>
-          </article>
-        </div>
 
         <aside class="reverse-discovery" data-reveal>
           <span class="reverse-discovery__tag">O Diferencial · Reverse Discovery</span>
@@ -366,6 +349,26 @@
             O resultado é duplo: gera <strong>propriedade intelectual e cultura de IA simultaneamente</strong>, e elimina o maior custo invisível de qualquer transformação digital: a resistência das equipes. A solução é desenhada por quem a utiliza no dia a dia.
           </p>
         </aside>
+
+        <div class="frentes" data-reveal>
+          <article class="frente frente--evang">
+            <span class="frente__tag">Sala de Testes</span>
+            <h3 class="frente__title">Metodologia proprietária de Sala de Testes.</h3>
+            <p class="frente__body">
+              Capacitamos os próprios profissionais operacionais a mapearem seus gargalos, identificarem oportunidades de ganho de tempo e testarem protótipos em suas rotinas diárias.
+              <strong>Não trazemos consultores externos para desenhar processos teóricos.</strong>
+            </p>
+          </article>
+          <span class="frentes__loop" aria-hidden="true">⇄</span>
+          <article class="frente frente--auto">
+            <span class="frente__tag">Automação</span>
+            <h3 class="frente__title">Engenharia que produtiza o protótipo validado.</h3>
+            <p class="frente__body">
+              O time técnico assume os protótipos aprovados pelo usuário final e os transforma em sistemas escaláveis, seguros e integrados.
+              <strong>Eliminamos o gerenciamento de mudança</strong>. A solução é desenhada por quem a utiliza.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -657,19 +660,19 @@
           <div class="stack-col">
             <span class="stack-col__head">4 Camadas</span>
             <ol class="stack-col__list">
-              <li><span class="stack-col__num">04</span> <strong>Observabilidade</strong> · Langfuse (self-hosted GCP)</li>
-              <li><span class="stack-col__num">03</span> <strong>Orquestração</strong> · n8n + LangGraph quando necessário</li>
-              <li><span class="stack-col__num">02</span> <strong>Dados</strong> · BigQuery + Vertex AI Vector Search</li>
-              <li><span class="stack-col__num">01</span> <strong>Foundation</strong> · Claude + Gemini via API</li>
+              <li><span class="stack-col__num">04</span><span class="stack-col__text"><strong>Observabilidade</strong> · Langfuse (self-hosted GCP)</span></li>
+              <li><span class="stack-col__num">03</span><span class="stack-col__text"><strong>Orquestração</strong> · n8n + LangGraph quando necessário</span></li>
+              <li><span class="stack-col__num">02</span><span class="stack-col__text"><strong>Dados</strong> · BigQuery + Vertex AI Vector Search</span></li>
+              <li><span class="stack-col__num">01</span><span class="stack-col__text"><strong>Foundation</strong> · Claude + Gemini via API</span></li>
             </ol>
           </div>
           <div class="stack-col">
             <span class="stack-col__head">4 Princípios</span>
             <ol class="stack-col__list">
-              <li><span class="stack-col__num">P1</span> <strong>SDD obrigatório.</strong> Spec executável em Git antes de qualquer deploy.</li>
-              <li><span class="stack-col__num">P2</span> <strong>Stage Gates.</strong> G0–G4. Veto jurídico e DPO em G1–G3.</li>
-              <li><span class="stack-col__num">P3</span> <strong>Workflow antes de agente.</strong> 80% do valor em workflows determinísticos.</li>
-              <li><span class="stack-col__num">P4</span> <strong>SAST.</strong> Gate de segurança no CI/CD sem exceção.</li>
+              <li><span class="stack-col__num">P1</span><span class="stack-col__text"><strong>SDD obrigatório.</strong> Spec executável em Git antes de qualquer deploy.</span></li>
+              <li><span class="stack-col__num">P2</span><span class="stack-col__text"><strong>Stage Gates.</strong> G0–G4. Veto jurídico e DPO em G1–G3.</span></li>
+              <li><span class="stack-col__num">P3</span><span class="stack-col__text"><strong>Workflow antes de agente.</strong> 80% do valor em workflows determinísticos.</span></li>
+              <li><span class="stack-col__num">P4</span><span class="stack-col__text"><strong>SAST.</strong> Gate de segurança no CI/CD sem exceção.</span></li>
             </ol>
           </div>
         </div>
