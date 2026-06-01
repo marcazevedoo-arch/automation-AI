@@ -4826,7 +4826,7 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
    ROTEIRO v1.4 · Componentes do novo deck (17 slides)
    ========================================================================== */
 
-/* Placeholder name · sinaliza [NOME_DA_OPERAÇÃO] */
+/* Placeholder name · sinaliza AI & Automation */
 .placeholder-name {
   font-family: var(--font-editorial);
   font-weight: 300;
@@ -5911,7 +5911,7 @@ main.deck > .section:not(.section--cover):not(.section--close)::before {
 }
 .nav__brand:hover .nav__brand-logo { background-color: var(--accent); }
 
-/* Slide 17 (close) · assinatura final · logo Galeria Holding + [NOME_DA_OPERAÇÃO] */
+/* Slide 17 (close) · assinatura final · logo Galeria Holding + AI & Automation */
 .cover__signature {
   margin-top: var(--space-7);
   display: flex;
@@ -6125,7 +6125,7 @@ main.deck > .section--intro {
   color: var(--t2);
 }
 
-/* ---- Center: [NOME_DA_OPERAÇÃO] gigante ---- */
+/* ---- Center: AI & Automation gigante ---- */
 .intro__name {
   font-family: var(--font-d);
   font-weight: 800;
@@ -6152,7 +6152,8 @@ main.deck > .section--intro {
   transform: translateY(0);
 }
 
-.intro__bracket {
+.intro__bracket,
+.intro__amp {
   color: var(--accent);
   display: inline-block;
   transform: translateY(-0.04em);
