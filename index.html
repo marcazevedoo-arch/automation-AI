@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[NOME_DA_OPERAÇÃO] · Pitch Deck Executivo. Sistema operacional de IA para a Galeria Holding." />
+  <title>[NOME_DA_OPERAÇÃO] · Pitch Deck Executivo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Inter Tight permanece como fallback quando Nohemi (em assets/fonts/) não está disponível. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="is-on-cover">
+  <!-- ============================================================
+       NAV FIXA — 4 atos (índice condensado)
+       ============================================================ -->
+  <nav class="nav" aria-label="Navegação primária">
+    <a class="nav__brand" href="#sec-01" aria-label="Galeria Holding · [NOME_DA_OPERAÇÃO]">
+      <span class="nav__brand-logo" role="img" aria-label="Galeria Holding"></span>
+      <span class="nav__brand-sep" aria-hidden="true">·</span>
+      <span class="nav__brand-bu placeholder-name">[NOME_DA_OPERAÇÃO]</span>
+    </a>
+
+    <ul class="nav__list" role="list">
+      <li><a href="#sec-01" data-nav="01" data-ato-start="01" data-ato-end="04"><span class="nav__num">I</span><span class="nav__label">Visão</span></a></li>
+      <li><a href="#sec-05" data-nav="05" data-ato-start="05" data-ato-end="09"><span class="nav__num">II</span><span class="nav__label">Modelo</span></a></li>
+      <li><a href="#sec-10" data-nav="10" data-ato-start="10" data-ato-end="12"><span class="nav__num">III</span><span class="nav__label">Caso financeiro</span></a></li>
+      <li><a href="#sec-13" data-nav="13" data-ato-start="13" data-ato-end="17"><span class="nav__num">IV</span><span class="nav__label">Pedido</span></a></li>
+    </ul>
+
+    <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Componente 1 — barra de progresso de scroll -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__fill" id="progress-fill"></div>
+  </div>
+
+  <main class="deck">
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 00 · CAPA BRUTALIST · all-type, sem header/bola         -->
+    <!-- ============================================================ -->
+    <section id="sec-00" class="section section--intro" data-section="00">
+      <div class="intro">
+        <header class="intro__top" data-reveal>
+          <span class="intro__brand-logo" role="img" aria-label="Galeria Holding"></span>
+          <span class="intro__year">2026</span>
+        </header>
+
+        <h1 class="intro__name" aria-label="[NOME_DA_OPERAÇÃO]">
+          <span class="intro__name-line" data-stagger="0">
+            <span class="intro__bracket" aria-hidden="true">[</span>NOME_DA_
+          </span>
+          <span class="intro__name-line" data-stagger="1">
+            OPERAÇÃO<span class="intro__bracket" aria-hidden="true">]</span>
+          </span>
+        </h1>
+
+        <footer class="intro__bottom" data-reveal>
+          <span class="intro__tagline">Operational System Design</span>
+          <div class="intro__scroll" aria-hidden="true">
+            <span class="intro__scroll-line"></span>
+            <span class="intro__scroll-label">scroll</span>
+          </div>
+          <span class="intro__page">00 / 17</span>
+        </footer>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 1 · UNIVERSAL · A Visão                                 -->
+    <!-- ============================================================ -->
+    <section id="sec-01" class="section section--cover" data-section="01" data-ato="I">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__blob aurora__blob--a"></div>
+        <div class="aurora__blob aurora__blob--b"></div>
+        <div class="aurora__blob aurora__blob--c"></div>
+      </div>
+
+      <div class="container container--center">
+        <div class="section__label" data-reveal>Ato I · 01 · A Visão</div>
+
+        <h1 class="cover__headline">
+          <span class="cover__line cover__line--mute" data-stagger="0">Não vamos otimizar a agência.</span>
+          <span class="cover__line cover__line--accent" data-stagger="1">Vamos desenhar o sistema operacional que ditará como a holding compete e fatura nos próximos três anos.</span>
+        </h1>
+
+        <p class="cover__caption" data-stagger="2">
+          <span class="placeholder-name">[Apresentador]</span> · Founder, <span class="placeholder-name">[NOME_DA_OPERAÇÃO]</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 2 · UNIVERSAL · O Diagnóstico                           -->
+    <!-- ============================================================ -->
+    <section id="sec-02" class="section" data-section="02" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 02 · O Diagnóstico</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Nossos processos críticos residem na cabeça de pessoas, não em sistemas.<br />
+            <span class="dim">Quando elas saem, a operação sai com elas.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O grupo cresceu e as empresas se multiplicaram. Os processos operacionais que sustentam esse crescimento continuam descentralizados e dependentes de esforço manual.
+          </p>
+        </header>
+
+        <div class="diag-grid">
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">01</span>
+            <h3 class="diag-item__title">Os processos críticos residem em pessoas, não em sistemas.</h3>
+            <p class="diag-item__body">Quando um profissional sênior se desliga, o histórico operacional se perde com ele. Cada empresa reinventou seus próprios fluxos sem documentação replicável.</p>
+          </article>
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">02</span>
+            <h3 class="diag-item__title">A resposta histórica para o crescimento foi contratar.</h3>
+            <p class="diag-item__body">Aumento linear de contratações perpetua a premissa de que faturamento exige aumento proporcional de folha de pagamento.</p>
+          </article>
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">03</span>
+            <h3 class="diag-item__title">O desperdício operacional é invisível.</h3>
+            <p class="diag-item__body">Não há medição centralizada. Por isso, nossa primeira entrega não é uma automação complexa. É um <strong>sistema de visibilidade e auditoria de processos</strong>.</p>
+          </article>
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">04</span>
+            <h3 class="diag-item__title">O problema se multiplica em cada empresa do grupo.</h3>
+            <p class="diag-item__body">A ineficiência observada na agência se reproduz multiplicada nas demais empresas da holding, sem padronização replicável entre elas.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 3 · UNIVERSAL · O Mapa Externo                          -->
+    <!-- ============================================================ -->
+    <section id="sec-03" class="section" data-section="03" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 03 · O Mapa Externo</div>
+          <h2 class="h2 big-statement" data-reveal>
+            A Publicis cresceu 5,8% em um mercado em contração.<br />
+            <span class="accent-text">Não foi por tecnologia. Foi porque redesenhou a operação antes de implementar a tecnologia.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Os grandes grupos globais não estão vencendo pela tecnologia em si. Estão demonstrando que a mudança estrutural do modelo de operação deve preceder a tecnologia.
+          </p>
+        </header>
+
+        <div class="hero-pair" data-reveal>
+          <span class="hero-pair__num magnet" data-magnet>+5,8<span class="hero-pair__pct">%</span></span>
+          <div class="hero-pair__caption">
+            <span class="hero-pair__label">Crescimento orgânico Publicis 2024</span>
+            <p>Acima da média do mercado global após a consolidação de €300M investidos em IA integrada.</p>
+          </div>
+        </div>
+
+        <div class="market-cards">
+          <article class="market-card" data-reveal>
+            <header class="market-card__head">
+              <h4 class="market-card__brand">WPP Open</h4>
+              <span class="market-card__tag">Plataforma própria de IA</span>
+            </header>
+            <ul class="market-card__stats">
+              <li><span class="stat__num">50.000</span><span class="stat__label">usuários/mês</span></li>
+              <li><span class="stat__num">29.000</span><span class="stat__label">agentes em produção</span></li>
+              <li><span class="stat__num">US$ 387M</span><span class="stat__label">por ano</span></li>
+              <li class="market-card__highlight">
+                <span class="stat__num">2 semanas → 4 min</span>
+                <span class="stat__label">anúncio para Instagram</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="market-card" data-reveal>
+            <header class="market-card__head">
+              <h4 class="market-card__brand">Publicis CoreAI</h4>
+              <span class="market-card__tag">Operating model AI-powered</span>
+            </header>
+            <ul class="market-card__stats">
+              <li><span class="stat__num">€300M</span><span class="stat__label">em 3 anos</span></li>
+              <li><span class="stat__num">+70%</span><span class="stat__label">do modelo operacional integrado por IA</span></li>
+              <li class="market-card__highlight">
+                <span class="stat__num">Alteraram talentos, governança e cobrança</span>
+                <span class="stat__label">antes de focar na automação pontual</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="local-context" data-reveal>
+          <div class="local-context__big magnet" data-magnet>72<span class="local-context__pct">%</span></div>
+          <p>
+            das empresas brasileiras ainda patinam em fases iniciais de exploração de IA <em>(Brazil Panels/Exame, jan/2026)</em>.
+            A janela de oportunidade é <strong>curta e valiosa</strong>.
+          </p>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          Esses números calibram direção estratégica, não escala comparável de investimento.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 4 · UNIVERSAL · 95% Falham                              -->
+    <!-- ============================================================ -->
+    <section id="sec-04" class="section" data-section="04" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 04 · 95% Falham</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Enquanto 95% dos projetos de IA fracassam,<br />
+            <span class="accent-text">nós vamos suceder por uma razão específica.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Medimos tudo. Encerramos projetos ruins rapidamente. Exigimos comprovação financeira antes de escalar. Essa disciplina separa o ganho real de P&amp;L dos discursos de inovação sem resultado prático.
+          </p>
+        </header>
+
+        <div class="stat-confront" data-reveal>
+          <div class="stat-confront__dominant">
+            <span class="stat-confront__num magnet" data-magnet>95<span class="stat-confront__pct">%</span></span>
+            <p class="stat-confront__caption">
+              dos pilotos de IA generativa em empresas não geram impacto mensurável no P&amp;L.
+              <cite>MIT Sloan Management Review, 2025</cite>
+            </p>
+          </div>
+          <div class="stat-confront__minor">
+            <span class="stat-confront__num stat-confront__num--accent magnet" data-magnet>5<span class="stat-confront__pct">%</span></span>
+            <p class="stat-confront__caption">os que capturam valor financeiro real.</p>
+          </div>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Registramos hipóteses antes de começar.</strong> Tempos de execução e metas operacionais travados no repositório Git antes de qualquer desenvolvimento.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Critérios de corte numéricos para encerrar.</strong> Stage Gates financeiros explícitos. O projeto que não performa, morre.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">03</span>
+            <p><strong>Validação estatística em grupos de controle.</strong> Nunca aceitamos relatos subjetivos como métrica de sucesso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 5 · UNIVERSAL · Laboratório → Destino                   -->
+    <!-- ============================================================ -->
+    <section id="sec-05" class="section" data-section="05" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 05 · Laboratório → Destino</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Começamos onde temos 15 anos de dados estruturados.<br />
+            <span class="accent-text">Quando o modelo gerar retorno comprovado, escalamos para o resto do grupo com risco praticamente zero.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            A agência é o laboratório. A holding é o destino. Iniciamos onde temos a maior densidade de dados e processos de alta frequência para validar a metodologia antes de expandir.
+          </p>
+        </header>
+
+        <div class="lab-flow" data-reveal>
+          <div class="lab-flow__stage lab-flow__stage--lab">
+            <span class="lab-flow__role">Laboratório</span>
+            <span class="lab-flow__entity">Agência</span>
+            <p class="lab-flow__why">
+              Processos repetitivos de alta frequência. Equipes habituadas a fluxos ágeis. Fundação de dados robusta.
+            </p>
+          </div>
+          <div class="lab-flow__connector" aria-hidden="true">
+            <span class="lab-flow__arrow">↗</span>
+            <span class="lab-flow__connector-label">propriedade intelectual replicável</span>
+          </div>
+          <div class="lab-flow__stage lab-flow__stage--dest">
+            <span class="lab-flow__role">Destino</span>
+            <span class="lab-flow__entity">Galeria <strong>Holding</strong></span>
+            <p class="lab-flow__why">
+              A segunda empresa herda tecnologia testada. <strong>Tempo de implementação reduzido pela metade.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>15 <span class="hero-anchor__unit">anos</span></span>
+          <p class="hero-anchor__caption">
+            de dados operacionais, taxonomias e histórico de campanhas estruturados no GCP. Ativo exclusivo que nenhuma consultoria externa replica.
+          </p>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Maturidade tecnológica máxima.</strong> Avaliação Google posiciona nossa infraestrutura de dados no nível máximo de prontidão.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Metodologia documentada como IP.</strong> O conhecimento criado no laboratório vira playbook replicável para as demais empresas do grupo.</p>
+          </article>
+          <article class="reason-item reason-item--warn">
+            <span class="reason-item__num">03</span>
+            <p><strong>O custo de inércia cresce.</strong> A janela de diferenciação competitiva está se fechando rapidamente. A cada trimestre, mais cara.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 6 · UNIVERSAL · Duas Frentes + Reverse Discovery        -->
+    <!-- ============================================================ -->
+    <section id="sec-06" class="section" data-section="06" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 06 · Duas Frentes</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Os operadores mapeiam seus gargalos. Os engenheiros constroem as soluções.<br />
+            <span class="accent-text">Ninguém resiste à mudança porque ninguém foi deixado de fora do design.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Duas frentes integradas em retroalimentação contínua: a Evangelização capacita operadores a desenharem seus protótipos. A Automação productiza o que foi validado.
+          </p>
+        </header>
+
+        <div class="frentes" data-reveal>
+          <article class="frente frente--evang">
+            <span class="frente__tag">Evangelização</span>
+            <h3 class="frente__title">Metodologia proprietária de Reverse Discovery.</h3>
+            <p class="frente__body">
+              Capacitamos os próprios profissionais operacionais a mapearem seus gargalos, identificarem oportunidades de ganho de tempo e testarem protótipos em suas rotinas diárias.
+              <strong>Não trazemos consultores externos para desenhar processos teóricos.</strong>
+            </p>
+          </article>
+          <span class="frentes__loop" aria-hidden="true">⇄</span>
+          <article class="frente frente--auto">
+            <span class="frente__tag">Automação</span>
+            <h3 class="frente__title">Engenharia que productiza o protótipo validado.</h3>
+            <p class="frente__body">
+              O time técnico assume os protótipos aprovados pelo usuário final e os transforma em sistemas escaláveis, seguros e integrados.
+              <strong>Eliminamos o gerenciamento de mudança</strong>. A solução é desenhada por quem a utiliza.
+            </p>
+          </article>
+        </div>
+
+        <aside class="reverse-discovery" data-reveal>
+          <span class="reverse-discovery__tag">O Diferencial · Reverse Discovery</span>
+          <p class="reverse-discovery__claim">
+            Em transformação digital tradicional: liderança define, técnicos constroem, funcionários resistem.
+            <strong>O custo de change management supera o custo de desenvolvimento.</strong>
+          </p>
+          <ol class="reverse-discovery__steps">
+            <li><span class="rd-step__num">1</span> Os operadores mapeiam seus próprios gargalos e ineficiências <em>(semanas 1–2)</em></li>
+            <li><span class="rd-step__num">2</span> Eles mesmos constroem protótipos brutos e validam com dados reais <em>(semanas 3–6)</em></li>
+            <li><span class="rd-step__num">3</span> A engenharia assume os protótipos e os transforma em sistemas escaláveis <em>(semanas 7–8)</em></li>
+          </ol>
+          <p class="reverse-discovery__close">
+            O resultado é duplo: gera <strong>propriedade intelectual e cultura de IA simultaneamente</strong>, e elimina o maior custo invisível de qualquer transformação digital: a resistência das equipes. A solução é desenhada por quem a utiliza no dia a dia.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 7 · UNIVERSAL · Sala de Testes / 8 semanas              -->
+    <!-- ============================================================ -->
+    <section id="sec-07" class="section" data-section="07" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 07 · Sala de Testes</div>
+          <h2 class="h2 big-statement" data-reveal>
+            De um gargalo identificado a uma solução em produção: 8 semanas.<br />
+            <span class="accent-text">Sem exceções. Sem extensões.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O operador valida o valor prático no dia a dia. A engenharia consolida a arquitetura. Ciclo curto, entrega contínua.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>8 <span class="hero-anchor__unit">semanas</span></span>
+          <p class="hero-anchor__caption">
+            Prazo limite para um departamento passar do mapeamento de dores à entrega de protótipo funcional documentado em produção.
+          </p>
+        </div>
+
+        <ol class="phases-line" data-reveal>
+          <li class="phase-step phase-step--accent">
+            <span class="phase-step__week">1 · 2</span>
+            <span class="phase-step__title">Discovery Operacional</span>
+            <p class="phase-step__detail">Distribuição de licenças seguras. Mapeamento de gargalos e retrabalho. <strong>Identificação de 3 projetos prioritários.</strong></p>
+          </li>
+          <li class="phase-step">
+            <span class="phase-step__week">3 · 4</span>
+            <span class="phase-step__title">Primeiros testes</span>
+            <p class="phase-step__detail">Squads por processo. Construção guiada de prompts e fluxos com acompanhamento diário.</p>
+          </li>
+          <li class="phase-step">
+            <span class="phase-step__week">5 · 6</span>
+            <span class="phase-step__title">Iteração e validação</span>
+            <p class="phase-step__detail">Refinamento técnico. Testes com dados reais de campanhas sob supervisão de engenharia.</p>
+          </li>
+          <li class="phase-step">
+            <span class="phase-step__week">7</span>
+            <span class="phase-step__title">Documentação</span>
+            <p class="phase-step__detail">Manual de uso, limites técnicos do modelo e onboarding para o restante do time.</p>
+          </li>
+          <li class="phase-step">
+            <span class="phase-step__week">8</span>
+            <span class="phase-step__title">Apresentação e escala</span>
+            <p class="phase-step__detail">Demonstração pelo próprio time. Liberação para uso diário. <strong>Quem construiu vira embaixador natural.</strong></p>
+          </li>
+        </ol>
+
+        <aside class="callout-soft" data-reveal>
+          <span class="callout-soft__tag">Sandbox seguro + aceleração Google</span>
+          <p>
+            Todo o processo roda sob governança estrita em <strong>Claude Enterprise e Gemini Pro</strong>, licenças corporativas com isolamento total de dados confidenciais.
+            Em paralelo, hackatons intensivos em <strong>parceria direta com a engenharia do Google</strong> aceleram o desenvolvimento de soluções complexas, a custo marginal mínimo.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 8 · UNIVERSAL · 8 Departamentos                         -->
+    <!-- ============================================================ -->
+    <section id="sec-08" class="section" data-section="08" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 08 · 8 Departamentos</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Isto não é uma intenção.<br />
+            <span class="accent-text">Isto é uma operação em andamento que cobrirá 80% da nossa força de trabalho em 18 meses.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Quatro departamentos com Discovery ativo. Cinco próximos na fila. Cada empresa da holding herda uma metodologia já validada.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>9 <span class="hero-anchor__unit">departamentos</span></span>
+          <p class="hero-anchor__caption">
+            Escopo total de atuação. As áreas escolhidas concentram a maior parte do headcount e dos custos operacionais do grupo.
+          </p>
+        </div>
+
+        <div class="dept-grid" data-reveal>
+          <div class="dept-group dept-group--active">
+            <span class="dept-group__status">● Discovery Ativo</span>
+            <ul class="dept-list">
+              <li><span class="dept-list__name">Dados</span><span class="dept-list__scope">Relatórios, análises táticas, taxonomia, data quality</span></li>
+              <li><span class="dept-list__name">Mídia</span><span class="dept-list__scope">Pacing, taxonomia, plano de mídia, requisição, otimização</span></li>
+              <li><span class="dept-list__name">Estratégia</span><span class="dept-list__scope">Mapeamento em andamento</span></li>
+              <li><span class="dept-list__name">Produção</span><span class="dept-list__scope">Mapeamento em andamento</span></li>
+            </ul>
+          </div>
+          <div class="dept-group dept-group--planned">
+            <span class="dept-group__status">○ Planejados</span>
+            <ul class="dept-list">
+              <li><span class="dept-list__name">Criação</span><span class="dept-list__scope">Inclui outras agências da holding</span></li>
+              <li><span class="dept-list__name">Negócios</span><span class="dept-list__scope">Próxima rodada</span></li>
+              <li><span class="dept-list__name">Jurídico</span><span class="dept-list__scope">Próxima rodada</span></li>
+              <li><span class="dept-list__name">Financeiro</span><span class="dept-list__scope">Próxima rodada</span></li>
+              <li><span class="dept-list__name">Talentos &amp; Cultura</span><span class="dept-list__scope">Habilita a transformação cultural da adoção</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          A escolha dos 9 setores se baseia em critério financeiro: eles concentram a grande maioria dos funcionários da holding.
+          O ROI apresentado é apenas a primeira onda. <strong>O mapa de 9 é o multiplicador real do investimento</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 9 · ADAPTADO · Duas Camadas de Entrega                  -->
+    <!-- ============================================================ -->
+    <section id="sec-09" class="section" data-section="09" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 09 · Duas Camadas</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Em 60 dias, todos na holding veem valor.<br />
+            <span class="accent-text">Em 6 meses, o retorno financeiro começa a aparecer no balanço.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Duas camadas de entrega correndo em paralelo: Ferramentas Universais imediatas + Automações por Frente que sustentam o break-even.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>60 <span class="hero-anchor__unit">dias</span></span>
+          <p class="hero-anchor__caption">
+            Prazo para implementação das Ferramentas Universais em todas as empresas da holding, criando impacto imediato na rotina de trabalho.
+          </p>
+        </div>
+
+        <div class="layer-block layer-block--a" data-reveal>
+          <span class="layer-block__tag">Bloco A · Ferramentas Universais</span>
+          <p class="layer-block__intro">Horizontais. Aplicáveis a qualquer profissional, independente do departamento. Baixíssima complexidade. Alto impacto perceptível imediato.</p>
+          <div class="tool-grid">
+            <div class="tool"><span class="tool__name">Organização de calendário</span><span class="tool__impact">Menos retrabalho de reagendamento</span></div>
+            <div class="tool"><span class="tool__name">Lembretes de cronograma</span><span class="tool__impact">Redução de atrasos por esquecimento</span></div>
+            <div class="tool"><span class="tool__name">Filtro de e-mails</span><span class="tool__impact">Foco no que importa, menos ruído</span></div>
+            <div class="tool"><span class="tool__name">Follow-up automático</span><span class="tool__impact">Nenhuma entrega cai no esquecimento</span></div>
+            <div class="tool"><span class="tool__name">Atas inteligentes</span><span class="tool__impact">Horas semanais de transcrição eliminadas</span></div>
+            <div class="tool"><span class="tool__name">Refinamento de briefings</span><span class="tool__impact">Menos rodadas de revisão</span></div>
+          </div>
+        </div>
+
+        <div class="layer-block layer-block--b" data-reveal>
+          <span class="layer-block__tag">Bloco B · Automações por Frente · Mídia + Dados</span>
+          <table class="auto-table">
+            <thead>
+              <tr><th>Tipo</th><th>Mídia</th><th>Dados</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Monitoramento</strong></td><td>Pacing de campanha</td><td>Relatórios de acompanhamento</td></tr>
+              <tr><td><strong>Classificação</strong></td><td>Taxonomia de campanhas</td><td>Validação de taxonomia</td></tr>
+              <tr><td><strong>Geração</strong></td><td>Plano de mídia</td><td>Construção de apresentações</td></tr>
+              <tr><td><strong>Análise</strong></td><td>Otimização de campanha</td><td>Análises e recomendações</td></tr>
+              <tr><td><strong>Integridade</strong></td><td>Requisição de materiais</td><td>Data quality no banco</td></tr>
+            </tbody>
+          </table>
+          <p class="auto-table__footer">
+            Stack universal: <strong>n8n · Claude · BigQuery</strong>. Human-in-the-loop em todas. O sistema nunca executa sozinho.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10 · ADAPTADO · Uma Tarde por Semana                    -->
+    <!-- ============================================================ -->
+    <section id="sec-10" class="section" data-section="10" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 10 · Modelo Financeiro</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Se 50 profissionais economizarem apenas uma tarde por semana, o projeto se paga em 24 meses.<br />
+            <span class="accent-text">Nossos testes indicam 25–30% de economia. Margem de segurança enorme.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O threshold financeiro para pagar o investimento é extremamente conservador. Perfeitamente viável dentro da atual força de trabalho.
+          </p>
+        </header>
+
+        <div class="threshold-confront" data-reveal>
+          <div class="threshold-confront__need">
+            <span class="threshold-confront__label">Necessário</span>
+            <span class="threshold-confront__num magnet" data-magnet>11<span class="threshold-confront__pct">%</span></span>
+            <p>Uma tarde por semana, em média.</p>
+          </div>
+          <div class="threshold-confront__divider" aria-hidden="true"></div>
+          <div class="threshold-confront__proj">
+            <span class="threshold-confront__label">Projetado (conservador)</span>
+            <span class="threshold-confront__num threshold-confront__num--accent magnet" data-magnet>25–30<span class="threshold-confront__pct">%</span></span>
+            <p>Estimativa dos primeiros pilotos.</p>
+          </div>
+        </div>
+
+        <div class="calc-stack" data-reveal>
+          <div class="calc-row"><span class="calc-row__key">Investimento total ano 1</span><span class="calc-row__val">R$ 1.574.400</span></div>
+          <div class="calc-row"><span class="calc-row__key">Para recuperar em 24 meses</span><span class="calc-row__val">R$ 787.200/ano</span></div>
+          <div class="calc-row"><span class="calc-row__key">Custo fully-loaded por pessoa</span><span class="calc-row__val">R$ 12.250/mês</span></div>
+          <div class="calc-row"><span class="calc-row__key">Pessoas-equivalente necessárias</span><span class="calc-row__val">5,4</span></div>
+          <div class="calc-row"><span class="calc-row__key">Headcount Mídia + Dados</span><span class="calc-row__val">50+ pessoas</span></div>
+          <div class="calc-row calc-row--emph"><span class="calc-row__key">% do tempo necessária</span><span class="calc-row__val accent-text">~11%</span></div>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          Threshold calculado sobre a primeira onda: Mídia e Dados. Demais departamentos a confirmar.
+          <strong>Esse cálculo é apenas a primeira onda.</strong> O que vier depois é upside.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 11 · ADAPTADO · 6 Posições · 3 Ondas                    -->
+    <!-- ============================================================ -->
+    <section id="sec-11" class="section" data-section="11" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 11 · Ondas e Checkpoints</div>
+          <h2 class="h2 big-statement" data-reveal>
+            O orçamento não é liberado de uma vez.<br />
+            <span class="accent-text">Cada tranche depende de comprovação de eficiência em produção.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Se encerrarmos no mês 6, perdemos apenas 40% do investimento. 6 posições otimizadas em 3 ondas — nenhuma antes do gatilho.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>R$ 160.000</span>
+          <p class="hero-anchor__caption">
+            O único compromisso financeiro de hoje. O restante é desbloqueado quando a etapa anterior entrega.
+          </p>
+        </div>
+
+        <ol class="waves-line" data-reveal>
+          <li class="wave-step"><span class="wave-step__phase">Onda 0</span><span class="wave-step__when">M1–3</span><span class="wave-step__what">Construção e baseline</span><span class="wave-step__econ">0 posições · R$ 0</span></li>
+          <li class="wave-step wave-step--active"><span class="wave-step__phase">Onda 1</span><span class="wave-step__when">M4–6</span><span class="wave-step__what">1ª automação validada 30 dias</span><span class="wave-step__econ">2 posições · +R$ 24.500/mês</span></li>
+          <li class="wave-step"><span class="wave-step__phase">Onda 2</span><span class="wave-step__when">M7–9</span><span class="wave-step__what">2ª automação · adoção &gt;80%</span><span class="wave-step__econ">2 posições · +R$ 49.000/mês</span></li>
+          <li class="wave-step"><span class="wave-step__phase">Onda 3</span><span class="wave-step__when">M10–12</span><span class="wave-step__what">3ª automação · causal positiva</span><span class="wave-step__econ">2 posições · +R$ 73.500/mês</span></li>
+        </ol>
+
+        <aside class="callout-soft callout-soft--rule" data-reveal>
+          <span class="callout-soft__tag">Regra inegociável</span>
+          <p>
+            Nenhuma posição é eliminada antes da automação estar em produção,
+            <strong>validada por 30 dias</strong> e com <strong>adoção comprovada &gt;80%</strong>.
+          </p>
+        </aside>
+
+        <p class="section__footnote" data-reveal>
+          <strong>Custo de saída controlada (M6):</strong> ~R$ 680.000 com salas de testes documentadas,
+          metodologia validada e automações funcionando. Encerramento controlado, não desperdício.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 12 · ADAPTADO · Stack GCP-Nativa                        -->
+    <!-- ============================================================ -->
+    <section id="sec-12" class="section" data-section="12" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 12 · Stack &amp; Governança</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Stack GCP-nativa. Governança real.<br />
+            <span class="accent-text">Rollback documentado.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Não estamos criando um emaranhado de ferramentas isoladas que geram dívida técnica para a holding. Toda automação segue padrões rígidos de engenharia de software e segurança corporativa.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>R$ 9.700<span class="hero-anchor__unit">/mês</span></span>
+          <p class="hero-anchor__caption">
+            Custo total de infraestrutura. GCP-nativa, dentro do que já existe. <strong>R$ 116.400/ano.</strong>
+          </p>
+        </div>
+
+        <div class="stack-cols" data-reveal>
+          <div class="stack-col">
+            <span class="stack-col__head">4 Camadas</span>
+            <ol class="stack-col__list">
+              <li><span class="stack-col__num">04</span> <strong>Observabilidade</strong> · Langfuse (self-hosted GCP)</li>
+              <li><span class="stack-col__num">03</span> <strong>Orquestração</strong> · n8n + LangGraph quando necessário</li>
+              <li><span class="stack-col__num">02</span> <strong>Dados</strong> · BigQuery + Vertex AI Vector Search</li>
+              <li><span class="stack-col__num">01</span> <strong>Foundation</strong> · Claude + Gemini via API</li>
+            </ol>
+          </div>
+          <div class="stack-col">
+            <span class="stack-col__head">4 Princípios</span>
+            <ol class="stack-col__list">
+              <li><span class="stack-col__num">P1</span> <strong>SDD obrigatório.</strong> Spec executável em Git antes de qualquer deploy.</li>
+              <li><span class="stack-col__num">P2</span> <strong>Stage Gates.</strong> G0–G4. Veto jurídico e DPO em G1–G3.</li>
+              <li><span class="stack-col__num">P3</span> <strong>Workflow antes de agente.</strong> 80% do valor em workflows determinísticos.</li>
+              <li><span class="stack-col__num">P4</span> <strong>SAST.</strong> Gate de segurança no CI/CD sem exceção.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          <strong>LGPD:</strong> base legal Art. 7º V. Métricas agregadas por time, sem keystroke logging. DPIA realizado.
+          <strong>Human-in-the-loop:</strong> toda automação que publica, envia ou modifica dados de produção passa por aprovação humana.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 13 · UNIVERSAL · Dois Eixos desde o Dia 1               -->
+    <!-- ============================================================ -->
+    <section id="sec-13" class="section" data-section="13" data-ato="IV">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato IV · 13 · Construção + Mensuração</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Dois eixos. Desde o dia 1.<br />
+            <span class="accent-text">Porque medir tarde é medir errado.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O desenvolvimento técnico e a auditoria financeira correm em paralelo desde o primeiro mês. Sem baseline coletado desde o início, qualquer ganho declarado no futuro é inauditável.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>Dia 1</span>
+          <p class="hero-anchor__caption">
+            Taskrow em Mídia e Dados monitorando 8 categorias de atividade. Hipóteses registradas em Git com carimbo de data/hora.
+          </p>
+        </div>
+
+        <div class="dual-axis" data-reveal>
+          <div class="dual-axis__row dual-axis__row--build">
+            <span class="dual-axis__role">Construção</span>
+            <ol class="dual-axis__steps">
+              <li><strong>M1–3</strong> · Charter · 4 ciclos · 3 automações com kill criteria</li>
+              <li><strong>M4–6</strong> · 2 automações em produção · Onda 1 · Hackatons Google</li>
+              <li><strong>M7–9</strong> · Ciclos Criação + Negócios · Onda 2 · Re-skilling 30 pessoas</li>
+              <li><strong>M10–12</strong> · Produto externo · Onda 3 · Primeiro rollout holding</li>
+            </ol>
+          </div>
+          <div class="dual-axis__row dual-axis__row--measure">
+            <span class="dual-axis__role">Mensuração</span>
+            <ol class="dual-axis__steps">
+              <li><strong>M1–3</strong> · Taskrow 8 categorias · Hipóteses pré-registradas · 8 semanas baseline</li>
+              <li><strong>M4–6</strong> · Grupos IA + controle ativos · Primeiros dados causais</li>
+              <li><strong>M7–9</strong> · Difference-in-Differences · TEI parcial</li>
+              <li><strong>M10–12</strong> · Relatório TEI 12 meses · Decisão de Fase 2 com evidência real</li>
+            </ol>
+          </div>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          <strong>H1 · Tempo:</strong> redução mínima de 15% no tempo de execução das tarefas mapeadas.
+          <strong>H2 · Qualidade:</strong> não-inferioridade nas entregas automatizadas vs. processo manual.
+          <strong>H3 · Capacidade:</strong> aumento de pelo menos 10% no atendimento de novas contas sem novas contratações.
+          Hipóteses travadas em Git antes do início. <strong>Ajuste retrospectivo de metas é impossível.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 14 · UNIVERSAL · Responsáveis                           -->
+    <!-- ============================================================ -->
+    <section id="sec-14" class="section" data-section="14" data-ato="IV">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato IV · 14 · Responsáveis</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Dois nomes. Uma responsabilidade.<br />
+            <span class="accent-text">Resultados defendidos em cada checkpoint.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Este projeto não é uma iniciativa anônima de consultoria externa. Possui liderança interna com profundo conhecimento de processos e capital reputacional para conduzir a mudança.
+          </p>
+        </header>
+
+        <div class="owners" data-reveal>
+          <article class="owner-card">
+            <span class="owner-card__role">Founder · Liderança estratégica e de processos</span>
+            <span class="owner-card__name placeholder-name">[Nome do Founder]</span>
+            <p class="owner-card__scope">
+              Direção estratégica · mediação dos ciclos de 8 semanas de Reverse Discovery · gestão de mudanças com lideranças dos departamentos.
+              Capital reputacional acumulado acelera a adoção sem atritos políticos.
+            </p>
+          </article>
+          <article class="owner-card">
+            <span class="owner-card__role">Liderança de Produto e Engenharia</span>
+            <span class="owner-card__name">João Silva</span>
+            <p class="owner-card__scope">
+              Diretor de Produto e Desenvolvimento. Arquitetura técnica da stack GCP, governança de código, segurança enterprise e liderança do time de engenheiros de IA.
+            </p>
+          </article>
+        </div>
+
+        <div class="engineers-line" data-reveal>
+          <span class="engineers-line__tag">Ramp-up de engenharia condicional</span>
+          <p>
+            Contratação faseada de especialistas em <strong>LLMOps, Engenharia de Prompt e Integração de Dados</strong>, estritamente condicionada à entrega de resultados nos checkpoints financeiros. Sem custos de folha ociosos.
+          </p>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          Os resultados de eficiência são deles para defender em cada um dos checkpoints financeiros deste ano.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 15 · ADAPTADO · Custo de Não Agir                       -->
+    <!-- ============================================================ -->
+    <section id="sec-15" class="section" data-section="15" data-ato="IV">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato IV · 15 · O Risco</div>
+          <h2 class="h2 big-statement" data-reveal>
+            O único risco real é não fazer,<br />
+            <span class="accent-text">e esse também tem custo.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            A inércia tecnológica tem um custo financeiro previsível e crescente a cada trimestre. O mercado está se reestruturando e a janela de diferenciação competitiva está se fechando rapidamente.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>R$ 1.574.400</span>
+          <p class="hero-anchor__caption">
+            Custo de oportunidade anual estimado. Horas de trabalho puramente manuais e repetitivas desperdiçadas caso a holding mantenha o modelo operacional atual sem integração de IA.
+          </p>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Vantagem competitiva em risco.</strong> Clientes passarão a exigir das agências modelos operacionais integrados por IA que garantam tempos de resposta e custos mais eficientes.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Salários sêniores em entregas júnior.</strong> Manter equipes executando tarefas manuais repetitivas continua espremendo a margem operacional a cada novo cliente.</p>
+          </article>
+          <article class="reason-item reason-item--warn">
+            <span class="reason-item__num">03</span>
+            <p><strong>Dívida técnica incontrolável.</strong> Soluções isoladas e planilhas paralelas fragmentam a governança de dados e inviabilizam uma fundação única no BigQuery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 16 · ADAPTADO · Três Pedidos                            -->
+    <!-- ============================================================ -->
+    <section id="sec-16" class="section" data-section="16" data-ato="IV">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato IV · 16 · Os Três Pedidos</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Três pedidos.<br />
+            <span class="accent-text">Nenhum é apenas orçamento.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O orçamento é a parte mais simples do pedido de hoje. O sucesso e a velocidade de adoção dependem fundamentalmente do endosso político e do acesso formal aos recursos técnicos da holding.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>R$ 160.000</span>
+          <p class="hero-anchor__caption">
+            Aporte financeiro inicial necessário para os primeiros 90 dias: estruturação, baseline e entrega das Ferramentas Universais.
+          </p>
+        </div>
+
+        <div class="asks">
+          <article class="ask" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">01</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 01</span>
+              <h3 class="ask__title">Orçamento controlado</h3>
+            </header>
+            <p class="ask__body">
+              Liberação imediata de <strong>R$ 160.000</strong> para os primeiros 90 dias. O restante do orçamento anual permanece bloqueado, liberado exclusivamente após comprovação de resultados nos checkpoints.
+            </p>
+          </article>
+          <article class="ask ask--accent" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">02</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 02</span>
+              <h3 class="ask__title">Endosso político</h3>
+            </header>
+            <p class="ask__body">
+              <strong>Comunicação oficial e pública da liderança da holding</strong> para todas as equipes sobre a importância estratégica do projeto.
+              O time operacional precisa ouvir que esta iniciativa é prioridade de quem lidera o grupo.
+            </p>
+          </article>
+          <article class="ask" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">03</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 03</span>
+              <h3 class="ask__title">Acesso técnico e SLAs</h3>
+            </header>
+            <p class="ask__body">
+              <strong>SLA formal de engenharia de dados antes de julho</strong> para integração de sistemas.
+              Acesso controlado ao BigQuery e <strong>4–6 horas semanais</strong> dedicadas dos heads nos primeiros 60 dias de Discovery Operacional.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 17 · UNIVERSAL · Começa Agora                           -->
+    <!-- ============================================================ -->
+    <section id="sec-17" class="section section--close" data-section="17" data-ato="IV">
+      <div class="aurora aurora--mirror" aria-hidden="true">
+        <div class="aurora__blob aurora__blob--a"></div>
+        <div class="aurora__blob aurora__blob--b"></div>
+        <div class="aurora__blob aurora__blob--c"></div>
+      </div>
+
+      <div class="container container--center">
+        <div class="section__label" data-reveal>Ato IV · 17 · A Decisão É de Hoje</div>
+
+        <h2 class="cover__headline cover__headline--close">
+          <span class="cover__line cover__line--mute" data-stagger="0">A holding de 2028</span>
+          <span class="cover__line cover__line--mute" data-stagger="1">não operará da mesma forma que operamos em 2026.</span>
+          <span class="cover__line" data-stagger="2">A única decisão real é se lideraremos essa evolução com método próprio</span>
+          <span class="cover__line" data-stagger="3">ou correremos atrás do prejuízo amanhã.</span>
+          <span class="cover__line cover__line--final" data-stagger="4">Começa agora.</span>
+        </h2>
+
+
+        <div class="cover__signature" data-stagger="5" aria-label="Galeria Holding e [NOME_DA_OPERAÇÃO]">
+          <span class="cover__logo" role="img" aria-label="Galeria Holding"></span>
+          <span class="cover__signature-divider" aria-hidden="true"></span>
+          <span class="cover__signature-name placeholder-name">[NOME_DA_OPERAÇÃO]</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Componente 2 — bola flutuante (número da seção atual) -->
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    type="button"
+    aria-label="Abrir sumário"
+    aria-expanded="false"
+    aria-controls="toc"
+  >
+    <span class="nav-toggle__num" id="nav-current" aria-hidden="true">01</span>
+    <span class="nav-toggle__sr">Slide atual</span>
+  </button>
+
+  <!-- Componente 2 — overlay full-screen com sumário -->
+  <nav
+    class="toc"
+    id="toc"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Sumário do deck"
+    aria-hidden="true"
+  >
+    <div class="toc__inner">
+      <header class="toc__head">
+        <span class="toc__eyebrow">Sumário · 17 slides · 4 atos</span>
+        <button class="toc__close" id="toc-close" type="button" aria-label="Fechar sumário">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+      <ol class="toc__list" id="toc-list" role="list">
+        <!-- itens populados via JS a partir do DOM (Variante A) -->
+      </ol>
+    </div>
+  </nav>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Claude local
+.claude/settings.local.json
+
+# Logs / temp
+*.log
+.tmp/
