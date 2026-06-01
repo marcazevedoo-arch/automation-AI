@@ -3135,28 +3135,9 @@ ul, ol { list-style: none; }
 }
 
 /* ==========================================================================
-   POL-03 · Grid de fundo na sec-04
+   POL-03 · Reserved (grid antigo removido em favor do watermark global do logo)
    ========================================================================== */
-#sec-04 {
-  position: relative;
-  overflow: hidden;
-}
-
-#sec-04::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 64px 64px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 100%);
-          mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 0%, transparent 100%);
-}
-
+#sec-04 { position: relative; overflow: hidden; }
 #sec-04 > .container { position: relative; z-index: 1; }
 
 /* ==========================================================================
@@ -3583,10 +3564,7 @@ main.deck > .section[data-has-overflow="true"]::after {
 
 main.deck > .section.is-scrolled-internal::after { opacity: 0 !important; }
 
-/* Ajuste seção 04 grid background para deck (evita corte) */
-main.deck > #sec-04::after {
-  inset: var(--nav-h) 0 var(--dock-h);
-}
+/* (grid de sec-04 removido) */
 
 /* Override section number outline para ficar dentro do slide */
 main.deck > .section:not(.section--cover):not(.section--close)::before {
@@ -6129,8 +6107,8 @@ main.deck > .section--intro {
 .intro__name {
   font-family: var(--font-d);
   font-weight: 800;
-  font-size: clamp(72px, 17vw, 260px);
-  line-height: 0.86;
+  font-size: clamp(56px, 13vw, 200px);
+  line-height: 0.88;
   color: var(--t1);
   margin: 0;
   text-transform: uppercase;
@@ -6153,7 +6131,8 @@ main.deck > .section--intro {
 }
 
 .intro__bracket,
-.intro__amp {
+.intro__amp,
+.intro__name .intro__amp {     /* specificity 0,2,0 garante override sobre .intro__name */
   color: var(--accent);
   display: inline-block;
   transform: translateY(-0.04em);
@@ -6284,6 +6263,46 @@ body.is-on-cover .progress {
   .intro__scroll { grid-column: 1; justify-self: start; }
   .intro__page { grid-column: 2; }
 }
+
+/* ==========================================================================
+   WATERMARK · logo Galeria Holding como pattern sutil em todos os slides
+   interiores (exclui a capa brutalist sec-00). Concept similar ao grid
+   antigo do sec-04: edge-to-edge, cinza sutil, máscara radial para fade
+   nas bordas. CSS mask permite herdar cor de tema.
+   ========================================================================== */
+main.deck > .section:not(.section--intro)::after {
+  content: '';
+  position: absolute;
+  inset: var(--nav-h) 0 var(--dock-h);
+  background-color: rgba(255, 255, 255, 0.025);
+  -webkit-mask:
+    url('assets/galeria-holding.svg') center / min(60%, 720px) auto no-repeat;
+  mask:
+    url('assets/galeria-holding.svg') center / min(60%, 720px) auto no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Conteúdo (container) acima do watermark */
+main.deck > .section:not(.section--intro) > .container,
+main.deck > .section:not(.section--intro) > .aurora {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mais sutil ainda em slides com headline grande para não competir */
+main.deck > .section--cover::after,
+main.deck > .section--close::after {
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  main.deck > .section:not(.section--intro)::after {
+    -webkit-mask-size: 80% auto;
+            mask-size: 80% auto;
+  }
+}
+
 
 
 
