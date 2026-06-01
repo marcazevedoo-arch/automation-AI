@@ -3136,8 +3136,10 @@ ul, ol { list-style: none; }
 
 /* ==========================================================================
    POL-03 · Reserved (grid antigo removido em favor do watermark global do logo)
+   Nota: removido `overflow: hidden` que estava bloqueando o scroll interno
+   herdado de `main.deck > .section` (overflow-y: auto).
    ========================================================================== */
-#sec-04 { position: relative; overflow: hidden; }
+#sec-04 { position: relative; }
 #sec-04 > .container { position: relative; z-index: 1; }
 
 /* ==========================================================================

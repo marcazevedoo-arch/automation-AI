@@ -579,6 +579,49 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     11. Overflow indicator — marca slides que precisam de scroll interno
+         e exibe a setinha "↓" definida em CSS via [data-has-overflow="true"].
+         A flag é removida quando o usuário começa a scrollar dentro do slide,
+         para evitar barulho visual depois do primeiro gesto.
+     ------------------------------------------------------------------------ */
+  function initOverflowIndicator() {
+    const sections = $$('main.deck .section[data-section]');
+    if (!sections.length) return;
+
+    const THRESHOLD = 8; // px de tolerância para arredondamento sub-pixel
+
+    function measure(sec) {
+      const overflows = sec.scrollHeight - sec.clientHeight > THRESHOLD;
+      if (overflows) {
+        sec.setAttribute('data-has-overflow', 'true');
+      } else {
+        sec.removeAttribute('data-has-overflow');
+        sec.classList.remove('is-scrolled-internal');
+      }
+    }
+
+    sections.forEach(sec => {
+      measure(sec);
+
+      // Esconde a seta assim que o usuário scrolla dentro do slide.
+      sec.addEventListener('scroll', () => {
+        if (sec.scrollTop > 4) sec.classList.add('is-scrolled-internal');
+        else sec.classList.remove('is-scrolled-internal');
+      }, { passive: true });
+    });
+
+    // Re-medir em resize (orientação / viewport / load de fontes pós-FOUT).
+    const remeasureAll = () => sections.forEach(measure);
+    window.addEventListener('resize', remeasureAll, { passive: true });
+    // Após o load das fontes Nohemi, a altura final pode mudar — recalibra.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(remeasureAll).catch(() => {});
+    }
+    // Fallback adicional após paint para capturar reflow de imagens/SVGs.
+    requestAnimationFrame(() => requestAnimationFrame(remeasureAll));
+  }
+
   function init() {
     initStaggerReveal();
     initScrollReveal();
@@ -590,6 +633,7 @@
     initPilotTabs();
     initSiteNav();
     initMagnet();
+    initOverflowIndicator();
   }
 
   if (document.readyState === 'loading') {
