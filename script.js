@@ -21,7 +21,7 @@
     const groups = [
       { el: $('#sec-00'), reverse: false, initialDelay: 200 },
       { el: $('#sec-01'), reverse: false, initialDelay: 800 },
-      { el: $('#sec-17'), reverse: false, initialDelay: 400 }
+      { el: $('#sec-21'), reverse: false, initialDelay: 400 }
     ];
 
     groups.forEach(({ el, reverse, initialDelay }) => {
@@ -286,7 +286,7 @@
     const sections = $$('.section[data-section]', main);
     if (!main || !sections.length) return;
 
-    // Títulos do roteiro v1.4 — sentence case (apenas 1ª letra + proper nouns)
+    // Títulos do roteiro v3.0 — sentence case (21 slides + capa)
     const TITLES = {
       '00': 'Capa',
       '01': 'A visão',
@@ -295,17 +295,21 @@
       '04': '95% falham',
       '05': 'Laboratório → destino',
       '06': 'Duas frentes',
-      '07': 'Sala de testes',
-      '08': '8 departamentos',
-      '09': 'Duas camadas',
-      '10': 'Modelo financeiro',
-      '11': 'Ondas e checkpoints',
-      '12': 'Stack & governança',
-      '13': 'Construção + mensuração',
-      '14': 'Responsáveis',
-      '15': 'O risco',
-      '16': 'Os três pedidos',
-      '17': 'Começa agora'
+      '07': 'Modelo de negócio',
+      '08': 'IP proprietário',
+      '09': 'Sala de testes',
+      '10': '9 departamentos',
+      '11': 'Duas camadas',
+      '12': 'Cenários futuros',
+      '13': 'Capacidade liberada',
+      '14': 'Novo modelo comercial',
+      '15': 'Investimento Ano 1',
+      '16': 'Estrutura de equipe',
+      '17': 'Riscos & mitigações',
+      '18': 'Governança · Dia 1',
+      '19': 'Liderança interna',
+      '20': 'Os três pedidos',
+      '21': 'Decisão de arquitetura'
     };
 
     // -------------------- Componente 1 · Progress bar --------------------
