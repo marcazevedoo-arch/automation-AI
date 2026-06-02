@@ -6276,7 +6276,8 @@ body.is-on-cover .progress {
    WATERMARK · logo Galeria Holding fixo + outline only
    Elemento global posicionado em fixed → imóvel enquanto slides deslizam.
    Usa galeria-holding-outline.svg (stroke-only) como CSS mask.
-   Cor cinza sutil, escala +50% sobre versão anterior.
+   Visível APENAS nos slides 01 e 02 (introdução institucional); nos demais
+   slides ele fica oculto para não competir com o conteúdo executivo denso.
    ========================================================================== */
 .watermark {
   position: fixed;
@@ -6288,13 +6289,13 @@ body.is-on-cover .progress {
     url('assets/galeria-holding-outline.svg') center / min(90%, 1080px) auto no-repeat;
   pointer-events: none;
   z-index: 0;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 460ms var(--ease-out);
 }
 
-/* Escondido na capa brutalist (sec-00) */
-body.is-on-cover .watermark {
-  opacity: 0;
+/* Mostrado apenas quando o body sinaliza estar num slide watermarked (01 ou 02) */
+body.show-watermark .watermark {
+  opacity: 1;
 }
 
 @media (max-width: 720px) {

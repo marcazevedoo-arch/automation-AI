@@ -448,6 +448,9 @@
       // Toggle body.is-on-cover · esconde nav + bola + progress quando estamos na capa
       document.body.classList.toggle('is-on-cover', num === '00');
 
+      // Watermark da Galeria Holding visível apenas nos slides 01 e 02
+      document.body.classList.toggle('show-watermark', num === '01' || num === '02');
+
       // bola: número da seção atual
       if (navCurrent) navCurrent.textContent = slideLabel;
 
