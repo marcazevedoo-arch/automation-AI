@@ -60,55 +60,70 @@
 }
 
 :root {
-  /* Backgrounds */
-  --bg: #0C0C0F;
-  --bg-s1: #131318;
-  --bg-s2: #17171D;
-  --bg-s3: #1C1C24;
+  /* ----------------------------------------------------------------------
+     PREMIUM BAUHAUS · paleta apropriada para C-suite
+     - Ouro matte como accent (substitui qualquer roxo/verde anterior)
+     - Preto premium aquecido (fundo)
+     - Branco quente (texto principal)
+     - Geometria rígida: r-pill = 0 (zero arredondamento)
+     ---------------------------------------------------------------------- */
 
-  /* Accent */
-  --accent: #4E36ED;
-  --accent-glow: rgba(78, 54, 237, 0.18);
-  --accent-dim: rgba(78, 54, 237, 0.08);
-  --accent-soft: rgba(78, 54, 237, 0.35);
+  /* Backgrounds — Preto Premium aquecido */
+  --bg: #0F1419;
+  --bg-s1: #151B22;
+  --bg-s2: #1B222B;
+  --bg-s3: #222A34;
 
-  /* Text */
-  --t1: #F5F5F7;
-  --t2: #A1A1A6;
-  --t3: #636366;
-  --t4: #3A3A3C;
+  /* Accent — Ouro Matte (Bauhaus premium) */
+  --accent: #C9A961;
+  --accent-hover: #D4B896;                       /* 15% mais claro p/ hover */
+  --accent-glow: rgba(201, 169, 97, 0.18);
+  --accent-dim: rgba(201, 169, 97, 0.10);
+  --accent-soft: rgba(201, 169, 97, 0.40);
 
-  /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-med: rgba(255, 255, 255, 0.14);
-  --border-strong: rgba(255, 255, 255, 0.22);
+  /* Accent secundário · Azul Corporativo (Bauhaus) */
+  --accent-2: #1A3A52;
+  --accent-2-soft: rgba(26, 58, 82, 0.45);
+
+  /* Text — Branco quente */
+  --t1: #F8F7F5;
+  --t2: #A3A099;
+  --t3: #6B6862;
+  --t4: #3D3D3D;                                  /* cinza quente p/ metadados / separadores */
+
+  /* Borders — derivadas do branco quente, mais sutis */
+  --border: rgba(248, 247, 245, 0.06);
+  --border-med: rgba(248, 247, 245, 0.12);
+  --border-strong: rgba(248, 247, 245, 0.22);
 
   /* Gradiente de marca + glass + elevação (tokenizados) */
   --grad-brand: linear-gradient(90deg, var(--accent), var(--accent-soft));
-  --surface-glass: rgba(12, 12, 15, 0.92);
-  --surface-glass-blur: blur(24px) saturate(160%);
+  --surface-glass: rgba(15, 20, 25, 0.92);
+  --surface-glass-blur: blur(24px) saturate(140%);
   --shadow-elev: 0 0 24px var(--accent-glow), 0 0 0 1px var(--border-med);
   --shadow-elev-soft: 0 0 16px var(--accent-glow);
-  --r-pill: 999px;
+
+  /* Geometria · Bauhaus = zero arredondamento (pills viram retângulos) */
+  --r-pill: 0;
 
   /* Warning */
   --warning: #FF9F0A;
   --warning-dim: rgba(255, 159, 10, 0.10);
   --warning-glow: rgba(255, 159, 10, 0.20);
 
-  /* Fonts · Nohemi é a display + hero typeface principal.
-     Inter Tight é fallback enquanto os .woff2 da Nohemi não estão em assets/fonts/. */
-  --font-d: 'Nohemi', 'Inter Tight', system-ui, -apple-system, sans-serif;
-  --font-b: 'Instrument Sans', system-ui, sans-serif;
-  --font-m: 'JetBrains Mono', ui-monospace, monospace;
-  /* --font-editorial agora aponta para Nohemi (era Fraunces serif).
-     Mantém o nome editorial por compatibilidade com seletores existentes. */
-  --font-editorial: 'Nohemi', 'Inter Tight', system-ui, sans-serif;
+  /* Fonts · IBM Plex (geométrica, suíça/Bauhaus). Nohemi e Inter Tight ficam
+     como fallback de emergência caso o CDN da Google Fonts esteja indisponível. */
+  --font-d: 'IBM Plex Sans', 'Nohemi', 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-b: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-m: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  /* --font-editorial mantém o nome por compatibilidade; aponta para IBM Plex Sans. */
+  --font-editorial: 'IBM Plex Sans', 'Nohemi', system-ui, sans-serif;
 
-  /* Spacing scale */
+  /* Spacing scale — alinhada a grid de 8px (Bauhaus).
+     --space-1 (4px) preservado para hairlines/half-grid. */
   --space-1: 4px;
   --space-2: 8px;
-  --space-3: 12px;
+  --space-3: 16px;
   --space-4: 16px;
   --space-5: 24px;
   --space-6: 32px;
@@ -6144,13 +6159,13 @@ main.deck > .section--intro {
 /* ---- Center: AI & Automation gigante ---- */
 .intro__name {
   font-family: var(--font-d);
-  font-weight: 800;
-  font-size: clamp(56px, 13vw, 200px);
-  line-height: 0.88;
+  font-weight: 700;
+  font-size: clamp(40px, 9vw, 144px);  /* IBM Plex Bold é mais largo que Nohemi; reduz p/ caber */
+  line-height: 0.92;
   color: var(--t1);
   margin: 0;
   text-transform: uppercase;
-  font-feature-settings: "ss01" on;
+  letter-spacing: -0.04em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -6336,6 +6351,72 @@ body.show-watermark .watermark {
 }
 
 
+/* ==========================================================================
+   BAUHAUS PREMIUM · OVERRIDE FINAL
+   Geometria rígida (zero arredondamento), tipografia IBM Plex global,
+   hovers refinados em ouro matte, separadores explícitos.
+   Aplicado por último para vencer regras anteriores via cascata + !important.
+   ========================================================================== */
 
+/* 1 · Geometria · zero border-radius em qualquer elemento ou pseudo */
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
 
+/* 2 · Letter-spacing limpo para IBM Plex (geometria suíça) */
+h1, h2, h3, .big-statement, .h2 {
+  letter-spacing: -0.02em;
+}
+.hero-anchor__num,
+.intro__name,
+.stat-confront__num,
+.cover-kpi__num,
+.diag-item__num,
+.reason-item__num,
+.phase-step__week {
+  letter-spacing: -0.04em;
+}
+
+/* 3 · Hover global · ouro matte → ouro claro em 200ms */
+a, button {
+  transition: color 200ms ease-in-out,
+              background-color 200ms ease-in-out,
+              border-color 200ms ease-in-out,
+              opacity 200ms ease-in-out;
+}
+a:hover, button:hover, .nav__list a:hover {
+  color: var(--accent-hover);
+}
+
+/* 4 · Separador horizontal Bauhaus · linha sólida em ouro entre seções
+   Uso opcional: <hr class="section-divider"> */
+.section-divider {
+  height: 2px;
+  background-color: var(--accent);
+  margin: var(--space-7) 0;
+  border: none;
+}
+
+/* 5 · Quadrados indicadores (Bauhaus) · 8px × 8px em ouro */
+.progress-square {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  display: inline-block;
+  margin-right: 4px;
+}
+
+/* 6 · Divisor vertical Bauhaus · 1px em cinza quente para colunas */
+.column-divider {
+  width: 1px;
+  background-color: var(--t4);
+  align-self: stretch;
+}
+
+/* 7 · Card geométrico · borda sólida, sem fundo, sem arredondamento */
+.bauhaus-card {
+  border: 1px solid var(--t4);
+  padding: var(--space-6);
+  background: transparent;
+}
 
