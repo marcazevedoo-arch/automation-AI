@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI &amp; Automation · Pitch Deck Executivo · Versão 20 min. Sistema operacional de IA para a Galeria Holding." />
+  <title>AI &amp; Automation · Pitch Deck Executivo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- IBM Plex Sans + Mono · tipografia geométrica Bauhaus (display + body + labels técnicos).
+       Inter Tight e Instrument Sans permanecem como fallback caso o CDN da Google falhe. -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=20min" />
+</head>
+
+<body class="is-on-cover">
+  <!-- Watermark fixo do logo Galeria Holding · fica imóvel atrás dos slides -->
+  <div class="watermark" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAV FIXA — 4 atos (índice condensado · versão 13 slides)
+       ============================================================ -->
+  <nav class="nav" aria-label="Navegação primária">
+    <a class="nav__brand" href="#sec-01" aria-label="Galeria Holding · AI &amp; Automation">
+      <span class="nav__brand-logo" role="img" aria-label="Galeria Holding"></span>
+      <span class="nav__brand-sep" aria-hidden="true">·</span>
+      <span class="nav__brand-bu">AI &amp; Automation</span>
+    </a>
+
+    <ul class="nav__list" role="list">
+      <li><a href="#sec-01" data-nav="01" data-ato-start="01" data-ato-end="04"><span class="nav__num">I</span><span class="nav__label">Visão</span></a></li>
+      <li><a href="#sec-05" data-nav="05" data-ato-start="05" data-ato-end="08"><span class="nav__num">II</span><span class="nav__label">Modelo</span></a></li>
+      <li><a href="#sec-09" data-nav="09" data-ato-start="09" data-ato-end="11"><span class="nav__num">III</span><span class="nav__label">Execução</span></a></li>
+      <li><a href="#sec-12" data-nav="12" data-ato-start="12" data-ato-end="13"><span class="nav__num">IV</span><span class="nav__label">Decisão</span></a></li>
+    </ul>
+
+    <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Componente 1 — barra de progresso de scroll -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__fill" id="progress-fill"></div>
+  </div>
+
+  <main class="deck">
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 00 · CAPA BRUTALIST                                     -->
+    <!-- ============================================================ -->
+    <section id="sec-00" class="section section--intro" data-section="00">
+      <div class="intro">
+        <header class="intro__top" data-reveal>
+          <span class="intro__brand-logo" role="img" aria-label="Galeria Holding"></span>
+          <span class="intro__year">2026</span>
+        </header>
+
+        <h1 class="intro__name" aria-label="AI &amp; Automation">
+          <span class="intro__name-line" data-stagger="0">AI <span class="intro__amp" aria-hidden="true">&amp;</span></span>
+          <span class="intro__name-line" data-stagger="1">AUTOMATION</span>
+        </h1>
+
+        <footer class="intro__bottom" data-reveal>
+          <span class="intro__tagline">Operational System Design</span>
+          <div class="intro__scroll" aria-hidden="true">
+            <span class="intro__scroll-line"></span>
+            <span class="intro__scroll-label">scroll</span>
+          </div>
+          <span class="intro__page">00 / 13</span>
+        </footer>
+      </div>
+
+      <!-- ===========================================================
+           Elemento visual · anel 3D em perspectiva oblíqua
+           Inspiração: torus cromado tilted em rotação contínua.
+           Tons de branco quente + cream + ouro (sem espectro RGB).
+           CSS 3D transform: perspective + rotateX recria o ângulo
+           de visão lateral; rotateZ contínuo faz a luz percorrer.
+           =========================================================== -->
+      <div class="intro__viz" aria-hidden="true">
+        <div class="ring-3d-stage">
+          <div class="ring-3d">
+            <div class="ring-3d__base"></div>
+            <div class="ring-3d__shine"></div>
+            <div class="ring-3d__shine ring-3d__shine--alt"></div>
+            <div class="ring-3d__rim"></div>
+          </div>
+          <div class="ring-3d__floor-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 01 · O Sistema Operacional                  (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-01" class="section section--cover" data-section="01" data-ato="I">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__blob aurora__blob--a"></div>
+        <div class="aurora__blob aurora__blob--b"></div>
+        <div class="aurora__blob aurora__blob--c"></div>
+      </div>
+
+      <div class="container container--center">
+        <div class="section__label" data-reveal>Ato I · 01 · O Sistema Operacional</div>
+
+        <h1 class="cover__headline">
+          <span class="cover__line cover__line--mute" data-stagger="0">Vamos desenhar o sistema operacional de IA para toda a holding.</span>
+          <span class="cover__line cover__line--accent" data-stagger="1">Começando pela agência.</span>
+        </h1>
+
+        <p class="cover__caption" data-stagger="2">
+          Marcelo Azevedo · Founder, AI &amp; Automation
+        </p>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Enquadramento</span>
+        <p>Não começo com ROI. Começo com uma pergunta: qual é o modelo operacional de IA da Galeria Holding hoje? Isto não é sobre eficiência interna — é sobre qual será a arquitetura operacional da holding nos próximos 3 anos.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 02 · O Problema                             (1.5 min)   -->
+    <!-- ============================================================ -->
+    <section id="sec-02" class="section" data-section="02" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 02 · O Problema</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Nossos processos críticos vivem na cabeça das pessoas, não em sistemas.<br />
+            <span class="accent-text">Quando elas saem, o processo desaparece.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            O grupo cresceu e as empresas se multiplicaram. Os processos operacionais que sustentam esse crescimento continuam descentralizados, dependentes de esforço manual e residentes na cabeça das pessoas que os executam.
+          </p>
+        </header>
+
+        <div class="diag-grid">
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">01</span>
+            <h3 class="diag-item__title">A resposta histórica para o crescimento foi contratar.</h3>
+            <p class="diag-item__body">Aumento linear de contratações perpetua a premissa de que faturamento exige aumento proporcional de folha de pagamento.</p>
+          </article>
+          <article class="diag-item" data-reveal>
+            <span class="diag-item__num">02</span>
+            <h3 class="diag-item__title">O desperdício operacional é invisível.</h3>
+            <p class="diag-item__body">Não há medição centralizada. Por isso, nossa primeira entrega não é uma automação complexa. É um <strong>sistema de visibilidade</strong>.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1.5 min · O Problema</span>
+        <p>Crescemos muito, mas os processos seguem descentralizados e dependentes de pessoas. Quando alguém sênior sai, o histórico operacional vai junto. A resposta histórica foi sempre contratar mais. E há desperdício invisível, porque não medimos a própria operação.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 03 · Publicis 5,8% (CONDENSADO)             (0.5 min)   -->
+    <!-- ============================================================ -->
+    <section id="sec-03" class="section" data-section="03" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 03 · Publicis 5,8%</div>
+          <h2 class="h2 big-statement" data-reveal>
+            A Publicis cresceu 5,8% em um mercado em contração.<br />
+            <span class="accent-text">Eles mudaram a operação antes de implementar a tecnologia.</span>
+          </h2>
+        </header>
+
+        <div class="hero-pair" data-reveal>
+          <span class="hero-pair__num magnet" data-magnet>+5,8<span class="hero-pair__pct">%</span></span>
+          <div class="hero-pair__caption">
+            <span class="hero-pair__label">Crescimento orgânico Publicis 2024</span>
+            <p>Redesenharam o modelo operacional em torno de dados integrados — antes de distribuir tecnologia. A lição: ganho financeiro real vem de mudar a operação, não de distribuir licenças de software.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">0.5 min · Mercado</span>
+        <p>Os maiores grupos investem centenas de milhões em IA. A Publicis cresceu quase 6% porque redesenhou a operação em torno de dados integrados. A lição: ganho real vem de mudar o modelo operacional — não de distribuir licenças de software.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 04 · 95% Falham                             (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-04" class="section" data-section="04" data-ato="I">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato I · 04 · 95% Falham</div>
+          <h2 class="h2 big-statement" data-reveal>
+            95% dos projetos de IA fracassam.<br />
+            <span class="accent-text">Nós vamos suceder porque medimos tudo, encerramos projetos ruins rapidamente e exigimos comprovação financeira.</span>
+          </h2>
+        </header>
+
+        <div class="stat-confront" data-reveal>
+          <div class="stat-confront__dominant">
+            <span class="stat-confront__num magnet" data-magnet>95<span class="stat-confront__pct">%</span></span>
+            <p class="stat-confront__caption">
+              dos pilotos de IA generativa em empresas não geram impacto mensurável no P&amp;L.
+              <cite>MIT Sloan Management Review, 2025</cite>
+            </p>
+          </div>
+          <div class="stat-confront__minor">
+            <span class="stat-confront__num stat-confront__num--accent magnet" data-magnet>5<span class="stat-confront__pct">%</span></span>
+            <p class="stat-confront__caption">os que capturam valor financeiro real.</p>
+          </div>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Hipóteses pré-registradas + análise causal.</strong> Tempos e metas travados em Git antes de qualquer desenvolvimento.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Checkpoints com critérios numéricos de corte.</strong> Stage Gates financeiros explícitos. O projeto que não performa, morre.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">03</span>
+            <p><strong>Validação estatística em grupos de controle.</strong> Nunca aceitamos relatos subjetivos como métrica de sucesso.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Rigor científico</span>
+        <p>Quase toda iniciativa corporativa de IA falha em mover o resultado. Para estar nos 5% que capturam valor, desenhamos a operação com rigor científico: hipóteses pré-registradas, grupos de controle e critérios numéricos para encerrar o que não performa.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 05 · Agência = Laboratório                  (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-05" class="section" data-section="05" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 05 · Agência = Laboratório</div>
+          <h2 class="h2 big-statement" data-reveal>
+            A agência é nosso laboratório de testes.<br />
+            <span class="accent-text">A holding é o destino final da escala.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Iniciamos onde temos a maior densidade de processos e a infraestrutura técnica mais madura. Quando o modelo gerar retorno comprovado, escalamos para o resto do grupo com risco praticamente zero.
+          </p>
+        </header>
+
+        <div class="lab-flow" data-reveal>
+          <div class="lab-flow__stage lab-flow__stage--lab">
+            <span class="lab-flow__role">Laboratório</span>
+            <span class="lab-flow__entity">Agência</span>
+            <p class="lab-flow__why">
+              Processos repetitivos de alta frequência. Equipes habituadas a fluxos ágeis. Infraestrutura de dados madura.
+            </p>
+          </div>
+          <div class="lab-flow__connector" aria-hidden="true">
+            <span class="lab-flow__arrow">↗</span>
+            <span class="lab-flow__connector-label">propriedade intelectual replicável</span>
+          </div>
+          <div class="lab-flow__stage lab-flow__stage--dest">
+            <span class="lab-flow__role">Destino</span>
+            <span class="lab-flow__entity">Galeria <strong>Holding</strong></span>
+            <p class="lab-flow__why">
+              As demais empresas herdam tecnologia testada. <strong>Tempo de implementação reduzido pela metade.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Densidade de processos repetitivos.</strong> A agência concentra o maior volume de fluxos de alta frequência da holding.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Metodologia documentada como propriedade intelectual.</strong> O conhecimento criado no laboratório vira playbook replicável para as demais empresas do grupo.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">03</span>
+            <p><strong>A janela de diferenciação está se fechando.</strong> A vantagem competitiva de hoje vira paridade em 2026 e desvantagem em 2027 se não agirmos agora.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Por que a agência</span>
+        <p>Por que a agência? Porque é onde temos a maior densidade de processos repetitivos e a infraestrutura técnica mais madura. Quando o modelo provar retorno, escalamos para o resto do grupo com risco praticamente zero.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 06 · Reverse Discovery                      (1.5 min)   -->
+    <!-- ============================================================ -->
+    <section id="sec-06" class="section" data-section="06" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 06 · Reverse Discovery</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Os operadores mapeiam seus gargalos. Os engenheiros constroem as soluções.<br />
+            <span class="accent-text">Ninguém resiste porque ninguém foi deixado de fora do design.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Duas frentes integradas em retroalimentação contínua: a Sala de Testes capacita operadores a desenharem seus protótipos. A Automação produtiza o que foi validado.
+          </p>
+        </header>
+
+        <aside class="reverse-discovery" data-reveal>
+          <span class="reverse-discovery__tag">O Diferencial · Reverse Discovery</span>
+          <p class="reverse-discovery__claim">
+            Em transformação digital tradicional: liderança define, técnicos constroem, funcionários resistem.
+            <strong>O custo de change management supera o custo de desenvolvimento.</strong>
+          </p>
+          <ol class="reverse-discovery__steps">
+            <li><span class="rd-step__num">1</span> Os operadores mapeiam seus próprios gargalos <em>(semanas 1–2)</em></li>
+            <li><span class="rd-step__num">2</span> Eles mesmos constroem protótipos e validam com dados reais <em>(semanas 3–6)</em></li>
+            <li><span class="rd-step__num">3</span> A engenharia produtiza o que já foi validado <em>(semanas 7–8)</em></li>
+          </ol>
+          <p class="reverse-discovery__close">
+            O resultado é duplo: gera <strong>propriedade intelectual e cultura de IA simultaneamente</strong>, e elimina o maior custo invisível de qualquer transformação digital: a resistência das equipes.
+          </p>
+        </aside>
+
+        <div class="frentes" data-reveal>
+          <article class="frente frente--evang">
+            <span class="frente__tag">Sala de Testes</span>
+            <h3 class="frente__title">Metodologia proprietária de Sala de Testes.</h3>
+            <p class="frente__body">
+              Capacitamos os próprios profissionais operacionais a mapearem seus gargalos, identificarem oportunidades de ganho de tempo e testarem protótipos em suas rotinas diárias.
+              <strong>Não trazemos consultores externos para desenhar processos teóricos.</strong>
+            </p>
+          </article>
+          <span class="frentes__loop" aria-hidden="true">⇄</span>
+          <article class="frente frente--auto">
+            <span class="frente__tag">Automação</span>
+            <h3 class="frente__title">Engenharia que produtiza o protótipo validado.</h3>
+            <p class="frente__body">
+              O time técnico assume os protótipos aprovados pelo usuário final e os transforma em sistemas escaláveis, seguros e integrados. O que a Sala de Testes descobre como prioridade, a Automação constrói como produto.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1.5 min · O Diferencial</span>
+        <p>Aqui está o diferencial. No modelo tradicional, liderança define, técnica constrói e o time resiste — o custo de change management supera o de desenvolvimento. Nós invertemos: os operadores mapeiam os gargalos, constroem protótipos e validam com dados reais; depois a engenharia produtiza o que já foi validado. Quem pede a automação é quem usa. Ninguém resiste porque ninguém ficou de fora.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 07 · Modelo de Negócio Transformado  ⭐ DESTAQUE (2 min) -->
+    <!-- ============================================================ -->
+    <section id="sec-07" class="section section--feature" data-section="07" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label section__label--feature" data-reveal>Ato II · 07 · Modelo de Negócio · O slide decisivo</div>
+          <h2 class="h2 big-statement" data-reveal>
+            A eficiência interna nos dá o poder de migrar do modelo de hora/homem<br />
+            <span class="accent-text">para modelos comerciais que multiplicam nossa margem de lucro.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            No modelo tradicional, eficiência é punida: entregamos mais rápido, cobramos menos. A automação rompe essa barreira ao transformar tempo economizado em margem líquida direta.
+          </p>
+        </header>
+
+        <div class="frentes" data-reveal>
+          <article class="frente frente--evang">
+            <span class="frente__tag">Modelo Tradicional</span>
+            <h3 class="frente__title">Venda de horas · teto de margem.</h3>
+            <p class="frente__body">
+              Cobrança por FTE/FEE. Se entregamos o trabalho mais rápido com IA, <strong>faturamos menos do cliente</strong>. Crescimento de receita exige crescimento linear de headcount. Margem operacional comprimida.
+            </p>
+          </article>
+          <span class="frentes__loop" aria-hidden="true">⇄</span>
+          <article class="frente frente--auto">
+            <span class="frente__tag">Modelo Transformado</span>
+            <h3 class="frente__title">Cobrança por entregáveis · margem exponencial.</h3>
+            <p class="frente__body">
+              <em>Delivery-based</em>, <em>success fee</em>, pacotes estruturados. O tempo economizado pelas automações vira <strong>margem líquida direta</strong>. Mesma equipe atende mais contas sem novas contratações.
+            </p>
+          </article>
+        </div>
+
+        <aside class="callout-soft" data-reveal>
+          <span class="callout-soft__tag">A regra do jogo comercial</span>
+          <p>
+            Não estamos apenas automatizando processos. Estamos <strong>desacoplando a receita do tamanho da equipe</strong>. Toda a velocidade que a IA nos der será revertida em margem líquida para a holding — não em redução de fatura para o cliente.
+          </p>
+        </aside>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">2 min · ⭐ Slide mais importante</span>
+        <p>Este é o slide mais importante. No modelo tradicional de agência, eficiência é punida: entregamos mais rápido, cobramos menos. A automação rompe isso. Migrando para cobrança por entregáveis ou success fee, o tempo economizado deixa de reduzir faturamento e vira margem líquida direta. A mesma equipe atende mais contas sem novas contratações. Não estamos só automatizando processos — estamos mudando como a empresa ganha dinheiro.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 08 · 60 dias + 6 meses (CONDENSADO)         (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-08" class="section" data-section="08" data-ato="II">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato II · 08 · 60 dias + 6 meses</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Em 60 dias, todos na holding veem valor prático.<br />
+            <span class="accent-text">Em 6 meses, as automações profundas geram impacto estrutural.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Duas camadas correndo em paralelo: Ferramentas Universais imediatas + Automações profundas que sustentam o retorno financeiro. Do gargalo à produção em ciclos curtos e validados.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>60 <span class="hero-anchor__unit">dias</span></span>
+          <p class="hero-anchor__caption">
+            Prazo para implementação das Ferramentas Universais em todas as empresas da holding. É o cartão de visitas — valor prático imediato.
+          </p>
+        </div>
+
+        <div class="layer-block layer-block--a" data-reveal>
+          <span class="layer-block__tag">Bloco A · Ferramentas Universais · 60 dias</span>
+          <p class="layer-block__intro">Horizontais. Aplicáveis a qualquer profissional, independente do departamento. Baixíssima complexidade. Alto impacto perceptível imediato.</p>
+          <div class="tool-grid">
+            <div class="tool"><span class="tool__name">Organização de calendário</span><span class="tool__impact">Menos retrabalho de reagendamento</span></div>
+            <div class="tool"><span class="tool__name">Lembretes de cronograma</span><span class="tool__impact">Redução de atrasos por esquecimento</span></div>
+            <div class="tool"><span class="tool__name">Filtro de e-mails</span><span class="tool__impact">Foco no que importa, menos ruído</span></div>
+            <div class="tool"><span class="tool__name">Follow-up automático</span><span class="tool__impact">Nenhuma entrega cai no esquecimento</span></div>
+            <div class="tool"><span class="tool__name">Atas inteligentes</span><span class="tool__impact">Horas semanais de transcrição eliminadas</span></div>
+            <div class="tool"><span class="tool__name">Refinamento de briefings</span><span class="tool__impact">Menos rodadas de revisão</span></div>
+          </div>
+        </div>
+
+        <div class="layer-block layer-block--b" data-reveal>
+          <span class="layer-block__tag">Bloco B · Automações Profundas · 6 meses</span>
+          <p class="layer-block__intro">
+            Em paralelo, a engenharia desenvolve as automações por frente (Mídia + Dados) que sustentam o retorno financeiro. Entre o 4º e o 6º mês, elas entregam o ganho estrutural de capacidade produtiva. Stack universal: <strong>n8n · Claude · BigQuery</strong>, sempre com human-in-the-loop — o sistema nunca executa sozinho.
+          </p>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Timeline de entrega</span>
+        <p>A timeline. Nos primeiros 60 dias distribuímos Ferramentas Universais — soluções simples que qualquer pessoa usa de imediato. É o cartão de visitas. Em paralelo, a engenharia desenvolve as automações profundas. Entre o 4º e o 6º mês, entregamos o ganho real de capacidade produtiva.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 09 · Orçamento Claro                        (2 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-09" class="section" data-section="09" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 09 · Orçamento Claro</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Orçamento focado exclusivamente em pessoas e infraestrutura técnica.<br />
+            <span class="accent-text">Sem margem de lucro. Cada real com destinação auditável.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Cinco profissionais seniores dedicados (5 FTEs). Multiplicador 1.5× sobre a massa salarial reflete o custo real fully-loaded (salário + encargos + benefícios), sem nenhuma margem embutida.
+          </p>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>R$ 1.62M</span>
+          <p class="hero-anchor__caption">
+            Investimento anual em folha de pagamento da equipe especializada. Massa salarial × 1.5× de custo total fully-loaded, sem margem de lucro.
+          </p>
+        </div>
+
+        <div class="calc-stack" data-reveal>
+          <div class="calc-row"><span class="calc-row__key">Marcelo Azevedo · Head / Founder <em>(R$ 36.000 × 1.5×)</em></span><span class="calc-row__val">R$ 648.000/ano</span></div>
+          <div class="calc-row"><span class="calc-row__key">João Silva · Product Design Lead <em>(R$ 18.000 × 1.5×)</em></span><span class="calc-row__val">R$ 324.000/ano</span></div>
+          <div class="calc-row"><span class="calc-row__key">3 Desenvolvedores · Engenharia de IA <em>(R$ 12.000 × 3 × 1.5×)</em></span><span class="calc-row__val">R$ 648.000/ano</span></div>
+          <div class="calc-row calc-row--emph"><span class="calc-row__key">Subtotal Pessoas · Equipe central da unidade</span><span class="calc-row__val accent-text">R$ 1.620.000</span></div>
+        </div>
+
+        <aside class="callout-soft" data-reveal>
+          <span class="callout-soft__tag">Regras de governança financeira</span>
+          <p>
+            <strong>Multiplicador 1.5×:</strong> custo real fully-loaded (salário + encargos + benefícios), sem margem de lucro embutida.<br />
+            <strong>Licenças NÃO saem do orçamento central:</strong> Claude Pro (R$ 153/mês por usuário) e Gemini Pro são repassados ao centro de custo de cada departamento participante conforme o rollout da sala de testes.<br />
+            <strong>Desenvolvimento de automações específicas:</strong> orçados projeto a projeto, fora deste orçamento inicial. Cada um requer aprovação separada.<br />
+            <strong>Infraestrutura técnica (Google Cloud / Tools) e investimento total Ano 1:</strong> valores a definir em conjunto com o CFO antes da apresentação final.
+          </p>
+        </aside>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">2 min · Orçamento</span>
+        <p>Transparência total. O orçamento central do Ano 1 é R$ 1,62 milhão: eu, João Silva como Product Design Lead e três engenheiros seniores — 5 FTEs. Aplicamos 1.5× sobre a massa salarial para refletir o custo real com encargos, sem nenhuma margem de lucro. As licenças de Claude Pro vão para o centro de custo de cada departamento. Automações complexas são orçadas projeto a projeto. O CFO tem controle total.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 10 · Riscos Mitigados                       (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-10" class="section" data-section="10" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 10 · Riscos Mitigados</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Identificamos os três maiores riscos do projeto<br />
+            <span class="accent-text">e desenhamos travas de segurança operacionais e técnicas para cada um deles.</span>
+          </h2>
+        </header>
+
+        <div class="hero-anchor" data-reveal>
+          <span class="hero-anchor__num magnet" data-magnet>Zero</span>
+          <p class="hero-anchor__caption">
+            Tolerância aceita para vazamento de dados de clientes ou desenvolvimento de soluções sem validação real.
+          </p>
+        </div>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Vazamento de dados de clientes.</strong> Mitigação: <em>Sandbox Seguro</em>. Licenças corporativas <strong>Claude Enterprise + Gemini Pro</strong> vinculadas à organização. Dados isolados dentro do perímetro de segurança da holding.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Resistência das equipes na adoção.</strong> Mitigação: <em>Reverse Discovery</em>. Soluções desenhadas pelos próprios operadores nas salas de testes. Quem pede a automação é quem valida e usa.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">03</span>
+            <p><strong>Desperdício em soluções inúteis.</strong> Mitigação: <em>Checkpoints com critérios de corte</em>. Engenharia só inicia desenvolvimento após o protótipo ser testado e validado com dados reais pelos operadores.</p>
+          </article>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          Sandbox Seguro garante conformidade com a LGPD e com as políticas de segurança de dados da holding. Toda automação que publica, envia ou modifica dados de produção passa por aprovação humana (<strong>Human-in-the-loop</strong>).
+        </p>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Riscos</span>
+        <p>Três riscos, três travas. Vazamento de dados: Sandbox Seguro com licenças corporativas Claude Enterprise — nenhum dado de cliente sai do perímetro. Resistência das equipes: Reverse Discovery — o operador desenha a solução. Desperdício: só desenvolvemos o que foi validado pelos usuários finais.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 11 · Liderança Interna                      (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-11" class="section" data-section="11" data-ato="III">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato III · 11 · Liderança Interna</div>
+          <h2 class="h2 big-statement" data-reveal>
+            Esta unidade é liderada por quem conhece profundamente os processos<br />
+            <span class="accent-text">e tem o capital reputacional necessário para introduzir mudanças reais.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            A transformação não é imposta de cima para baixo. É construída de dentro para fora — por quem fica accountable pelos resultados.
+          </p>
+        </header>
+
+        <div class="reason-list" data-reveal>
+          <article class="reason-item">
+            <span class="reason-item__num">01</span>
+            <p><strong>Conhecimento profundo de processos.</strong> Liderança interna sabe onde estão as dores reais. Não há ciclo de aprendizado externo.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">02</span>
+            <p><strong>Capital reputacional interno.</strong> A confiança construída ao longo do tempo acelera adoção e remove atritos políticos.</p>
+          </article>
+          <article class="reason-item">
+            <span class="reason-item__num">03</span>
+            <p><strong>Permanência e accountability.</strong> Quando uma consultoria sai, leva o relatório. A liderança interna fica — accountable por cada resultado.</p>
+          </article>
+        </div>
+
+        <p class="section__footnote" data-reveal>
+          Esta é a maior falha de projetos de transformação digital: a desconexão entre quem desenha e quem opera. Aqui não há essa desconexão.
+        </p>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Liderança</span>
+        <p>Por que isto importa? Porque não é consultoria externa. Eu conheço os processos, as pessoas e os obstáculos reais. A consultoria sai e leva o relatório; esta liderança fica, accountable pelos resultados. Isso muda tudo.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 12 · Os Três Pedidos                        (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-12" class="section" data-section="12" data-ato="IV">
+      <div class="container">
+        <header class="section__header">
+          <div class="section__label" data-reveal>Ato IV · 12 · Os Três Pedidos</div>
+          <h2 class="h2 big-statement" data-reveal>
+            São três pedidos.<br />
+            <span class="accent-text">Orçamento para executar, endosso para liderar mudança, e paciência para validar resultados.</span>
+          </h2>
+          <p class="section__sub" data-reveal>
+            Não é um investimento de risco. É um investimento com métricas claras de retorno, dividido em fases condicionadas a checkpoints.
+          </p>
+        </header>
+
+        <div class="asks">
+          <article class="ask" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">01</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 01</span>
+              <h3 class="ask__title">Orçamento</h3>
+            </header>
+            <p class="ask__body">
+              Aprovação do investimento de <strong>R$ 1.62M</strong> em folha para os primeiros 12 meses, dividido em fases condicionadas a checkpoints. Cada tranche liberada após comprovação de resultados.
+            </p>
+          </article>
+          <article class="ask ask--accent" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">02</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 02</span>
+              <h3 class="ask__title">Endosso</h3>
+            </header>
+            <p class="ask__body">
+              <strong>Autoridade para introduzir novos processos</strong>, metodologias e ferramentas sem que cada decisão precise passar por aprovação de comitê. Velocidade é essencial. O time precisa ouvir da liderança que esta iniciativa é prioridade.
+            </p>
+          </article>
+          <article class="ask" data-reveal>
+            <span class="ask__bignum" aria-hidden="true">03</span>
+            <header class="ask__head">
+              <span class="ask__num">Pedido 03</span>
+              <h3 class="ask__title">Paciência</h3>
+            </header>
+            <p class="ask__body">
+              <strong>60 dias</strong> para as Ferramentas Universais (cartão de visitas). <strong>6 meses</strong> para o retorno financeiro começar a aparecer no balanço. Não prometemos milagres em 30 dias.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Call to action</span>
+        <p>Três pedidos. Orçamento: R$ 1,62 milhão para 12 meses, em fases condicionadas a checkpoints. Endosso: autoridade para introduzir novos processos sem comitê a cada decisão — velocidade é essencial. Paciência: 60 dias para o cartão de visitas, 6 meses para o retorno aparecer. Não prometemos milagres em 30 dias.</p>
+      </aside>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SLIDE 13 · A Decisão de Arquitetura               (1 min)     -->
+    <!-- ============================================================ -->
+    <section id="sec-13" class="section section--close" data-section="13" data-ato="IV">
+      <div class="aurora aurora--mirror" aria-hidden="true">
+        <div class="aurora__blob aurora__blob--a"></div>
+        <div class="aurora__blob aurora__blob--b"></div>
+        <div class="aurora__blob aurora__blob--c"></div>
+      </div>
+
+      <div class="container container--center">
+        <div class="section__label" data-reveal>Ato IV · 13 · A Decisão É de Hoje</div>
+
+        <h2 class="cover__headline cover__headline--close">
+          <span class="cover__line cover__line--mute" data-stagger="0">Essa decisão não é sobre IA.</span>
+          <span class="cover__line cover__line--mute" data-stagger="1">Não é sobre tecnologia.</span>
+          <span class="cover__line" data-stagger="2">É sobre qual será a arquitetura operacional da Galeria Holding</span>
+          <span class="cover__line" data-stagger="3">nos próximos 3 anos.</span>
+          <span class="cover__line cover__line--final" data-stagger="4">A escolha é de hoje.</span>
+        </h2>
+
+        <div class="cover__signature" data-stagger="5" aria-label="Galeria Holding e AI &amp; Automation">
+          <span class="cover__logo" role="img" aria-label="Galeria Holding"></span>
+          <span class="cover__signature-divider" aria-hidden="true"></span>
+          <span class="cover__signature-name">AI &amp; Automation</span>
+        </div>
+      </div>
+
+      <aside class="speaker-notes" aria-hidden="true">
+        <span class="speaker-notes__dur">1 min · Fechamento</span>
+        <p>(Pausa.) Em 3 anos teremos uma de duas arquiteturas: um modelo operacional integrado por IA — processos padronizados, metodologia proprietária, escala sem crescimento linear de custos — ou continuaremos descentralizados, dependentes de pessoas, com desperdício invisível. A escolha de hoje define qual cenário será real em 2029. Obrigado.</p>
+      </aside>
+    </section>
+
+  </main>
+
+  <!-- Componente 2 — bola flutuante (número da seção atual) -->
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    type="button"
+    aria-label="Abrir sumário"
+    aria-expanded="false"
+    aria-controls="toc"
+  >
+    <span class="nav-toggle__num" id="nav-current" aria-hidden="true">01</span>
+    <span class="nav-toggle__sr">Slide atual</span>
+  </button>
+
+  <!-- Componente 2 — overlay full-screen com sumário -->
+  <nav
+    class="toc"
+    id="toc"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Sumário do deck"
+    aria-hidden="true"
+  >
+    <div class="toc__inner">
+      <header class="toc__head">
+        <span class="toc__eyebrow">Sumário · 13 slides · 4 atos · 20 min</span>
+        <button class="toc__close" id="toc-close" type="button" aria-label="Fechar sumário">
+          <span aria-hidden="true">×</span>
+        </button>
+      </header>
+      <ol class="toc__list" id="toc-list" role="list">
+        <!-- itens populados via JS a partir do DOM (Variante A) -->
+      </ol>
+    </div>
+  </nav>
+
+  <script src="script.js?v=20min" defer></script>
+</body>
+</html>
