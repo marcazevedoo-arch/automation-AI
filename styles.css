@@ -6123,10 +6123,11 @@ main.deck > .section--intro {
 
 .intro {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;              /* grid resolve centralização vertical sem conflitos */
+  grid-template-rows: auto 1fr auto;
   width: 100%;
+  height: 100%;               /* parent vira display:block no deck mode; força full height */
+  min-height: calc(100vh - var(--space-7) * 2);
   gap: var(--space-6);
 }
 
@@ -6156,7 +6157,7 @@ main.deck > .section--intro {
   color: var(--t2);
 }
 
-/* ---- Center: AI & Automation gigante ---- */
+/* ---- Center: AI & Automation gigante (centralizado vertical no grid .intro) ---- */
 .intro__name {
   font-family: var(--font-d);
   font-weight: 700;
@@ -6169,6 +6170,7 @@ main.deck > .section--intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: center;        /* centraliza verticalmente na linha 1fr do grid */
 }
 
 .intro__name-line {
@@ -6486,167 +6488,169 @@ a:hover, button:hover, .nav__list a:hover {
 }
 
 /* ==========================================================================
-   CAPA · ELEMENTO VISUAL · ANEL 3D COM ABERRAÇÃO CROMÁTICA (intro__viz)
-   Anel rotativo com luz refratada — espectro vermelho/amarelo/branco/azul
-   passando ao longo do contorno. Múltiplas camadas com hue-rotate +
-   blend modes simulam separação RGB realista de prisma (chromatic
-   aberration). Halo difuso externo e highlight especular reforçam
-   sensação de volume e luz dinâmica.
+   CAPA · ELEMENTO VISUAL · ANEL 3D EM PERSPECTIVA (intro__viz)
+   Torus tilted (perspectiva oblíqua) com rotação contínua, em tons
+   branco quente + cream + ouro. Inspirado em renders 3D cinematográficos
+   de objetos cromados/iridescentes vistos de ângulo lateral.
 
-   Implementação 100% CSS: conic-gradient + radial mask (donut) + blur +
-   transform rotate infinite. Sem JS, sem WebGL.
+   Técnica: container com perspective + perspective-origin desloca o
+   vanishing point pra cima; .ring-3d aplica rotateX(70deg) para o
+   tilt visual; o conic-gradient interno do .ring-3d__base gira (rotateZ)
+   por dentro, simulando a luz percorrendo o aro continuamente.
+
+   Posicionamento: canto inferior direito do slide-capa.
    ========================================================================== */
 .intro__viz {
   position: absolute;
-  top: 50%;
+  bottom: calc(var(--dock-h, 0px) + var(--space-7));
   right: var(--space-7);
-  transform: translateY(-50%);
-  width: clamp(260px, 28vw, 420px);
-  height: clamp(260px, 28vw, 420px);
+  width: clamp(280px, 32vw, 480px);
+  height: clamp(280px, 32vw, 480px);
   pointer-events: none;
   z-index: 0;
   opacity: 0;
   animation: viz-fade-in 1400ms var(--ease-out) 600ms forwards;
+  perspective: 900px;
+  perspective-origin: 50% 35%;
 }
 
 /* Exceção ao zero-radius Bauhaus: este é o ÚNICO elemento orgânico do
    design system. Override com !important para vencer a regra global
    *,*::before,*::after { border-radius: 0 !important; }. */
+.ring-3d-stage,
 .ring-3d,
-.ring-3d__halo,
-.ring-3d__spectrum,
-.ring-3d__highlight,
-.ring-3d__shadow {
+.ring-3d__base,
+.ring-3d__shine,
+.ring-3d__rim,
+.ring-3d__floor-glow {
   border-radius: 50% !important;
 }
 
-.ring-3d {
+.ring-3d-stage {
   position: relative;
   width: 100%;
   height: 100%;
-  isolation: isolate;          /* permite blend-modes locais sem vazar */
-  animation: ring-spin 18s linear infinite;
+  transform-style: preserve-3d;
 }
 
-/* ---- Halo difuso externo · respira lentamente ---- */
-.ring-3d__halo {
-  position: absolute;
-  inset: -12%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 235, 200, 0.18) 0%,
-    rgba(255, 180, 100, 0.10) 30%,
-    rgba(80, 120, 220, 0.08) 55%,
-    transparent 72%
-  );
-  filter: blur(18px);
-  animation: ring-halo-pulse 6s ease-in-out infinite;
-}
-
-/* ---- Camada base · gradiente espectral percorrendo o anel ----
-   conic-gradient cria a passagem de cor no contorno; o radial mask
-   recorta o disco em formato de anel (donut). */
-.ring-3d__spectrum {
+/* ---- Anel · aplica o tilt 3D + container das camadas que rotacionam ---- */
+.ring-3d {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(72deg);
+  animation: ring-tilt-wobble 9s ease-in-out infinite;
+}
+
+/* ---- Base do anel · conic-gradient em branco quente percorre o aro
+   O rotateZ interno faz a luz "viajar" pelo aro independentemente do tilt. */
+.ring-3d__base {
+  position: absolute;
+  inset: 0;
   background: conic-gradient(
     from 0deg,
-    transparent 0deg,
-    rgba(40, 80, 200, 0.0)  18deg,
-    rgba(70, 130, 230, 0.7) 30deg,
-    rgba(120, 200, 255, 1)  42deg,
-    rgba(255, 255, 255, 1)  58deg,
-    rgba(255, 230, 180, 1)  74deg,
-    rgba(255, 180, 80, 1)   90deg,
-    rgba(255, 80, 40, 1)    110deg,
-    rgba(180, 30, 60, 0.7)  140deg,
-    rgba(40, 20, 80, 0.3)   180deg,
-    transparent             220deg,
-    transparent             360deg
+    rgba(40, 30, 20, 0.95)   0deg,
+    rgba(120, 95, 65, 0.7)   30deg,
+    rgba(220, 195, 155, 0.95) 70deg,
+    rgba(255, 248, 235, 1)    100deg,
+    rgba(255, 240, 210, 1)    130deg,
+    rgba(210, 175, 130, 0.85) 170deg,
+    rgba(80, 60, 40, 0.6)     210deg,
+    rgba(30, 22, 14, 0.9)     250deg,
+    rgba(70, 55, 38, 0.7)     300deg,
+    rgba(40, 30, 20, 0.95)    360deg
   );
-  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 44%, #000 47%, #000 96%, transparent 100%);
-          mask: radial-gradient(circle at 50% 50%, transparent 44%, #000 47%, #000 96%, transparent 100%);
-  filter: blur(3px) saturate(1.15);
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 50%, #000 53%, #000 95%, transparent 99%);
+          mask: radial-gradient(circle at 50% 50%, transparent 50%, #000 53%, #000 95%, transparent 99%);
+  filter: blur(2px) saturate(1.05);
+  animation: ring-luma-spin 12s linear infinite;
 }
 
-/* ---- Aberração cromática · cópia deslocada em RED ----
-   Hue-rotate negativo desloca o espectro inteiro para vermelho;
-   pequeno transform offset + screen blend cria o "vazamento" cromático
-   típico de prismas / lentes refrativas. */
-.ring-3d__spectrum--r {
-  filter: blur(5px) hue-rotate(-25deg) saturate(1.4);
-  mix-blend-mode: screen;
-  opacity: 0.7;
-  transform: rotate(-2deg) scale(1.015);
-}
-
-/* ---- Aberração cromática · cópia deslocada em BLUE ---- */
-.ring-3d__spectrum--b {
-  filter: blur(5px) hue-rotate(30deg) saturate(1.3);
-  mix-blend-mode: screen;
-  opacity: 0.6;
-  transform: rotate(2deg) scale(0.985);
-}
-
-/* ---- Highlight especular branco · simula reflexão de luz forte ----
-   Arco branco de ~80deg posicionado no topo, blur intenso para
-   parecer um "hot spot" de luz percorrendo o anel. */
-.ring-3d__highlight {
+/* ---- Camada de brilho · arco branco-quente especular ---- */
+.ring-3d__shine {
   position: absolute;
   inset: 2%;
-  border-radius: 50%;
   background: conic-gradient(
-    from 285deg,
-    transparent 0deg,
-    rgba(255, 255, 255, 0.0)  20deg,
-    rgba(255, 255, 255, 0.85) 50deg,
-    rgba(255, 255, 255, 1)    75deg,
-    rgba(255, 255, 255, 0.6)  100deg,
-    transparent               140deg,
-    transparent               360deg
+    from 300deg,
+    transparent              0deg,
+    rgba(255, 255, 255, 0)   25deg,
+    rgba(255, 248, 230, 0.6) 45deg,
+    rgba(255, 250, 240, 0.95) 65deg,
+    rgba(255, 248, 230, 0.7) 85deg,
+    transparent              110deg,
+    transparent              360deg
   );
-  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 46%, #000 48%, #000 94%, transparent 100%);
-          mask: radial-gradient(circle at 50% 50%, transparent 46%, #000 48%, #000 94%, transparent 100%);
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent 52%, #000 55%, #000 92%, transparent 96%);
+          mask: radial-gradient(circle at 50% 50%, transparent 52%, #000 55%, #000 92%, transparent 96%);
   filter: blur(6px);
   mix-blend-mode: screen;
-  opacity: 0.95;
+  opacity: 0.9;
+  animation: ring-luma-spin 10s linear infinite reverse;
+}
+.ring-3d__shine--alt {
+  filter: blur(10px);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  animation-duration: 17s;
+  animation-direction: normal;
+  transform: rotate(140deg);
 }
 
-/* ---- Sombra interna do anel · dá profundidade volumétrica ----
-   Gradiente radial mais escuro no interior + um pouco de blur. */
-.ring-3d__shadow {
+/* ---- Rim · borda fina externa para definição do aro ---- */
+.ring-3d__rim {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.6) 38%,
-    transparent 46%
-  );
+  border: 1px solid rgba(255, 245, 220, 0.18);
   pointer-events: none;
-  z-index: -1;
+}
+
+/* ---- Brilho difuso no chão · marca a "sombra de luz" do anel ----
+   Posicionado abaixo, projeta um glow elíptico no plano imaginário. */
+.ring-3d__floor-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -8%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 30%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 235, 200, 0.22) 0%,
+    rgba(255, 200, 140, 0.10) 35%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+  animation: ring-floor-pulse 6s ease-in-out infinite;
 }
 
 /* ---- Animações ---- */
 @keyframes viz-fade-in {
-  from { opacity: 0; transform: translateY(-50%) scale(0.94); }
-  to   { opacity: 1; transform: translateY(-50%) scale(1); }
+  from { opacity: 0; transform: translateY(20px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
 }
-@keyframes ring-spin {
+@keyframes ring-luma-spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-@keyframes ring-halo-pulse {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50%      { opacity: 1;   transform: scale(1.04); }
+/* Pequena oscilação no tilt — suaviza a rotação plana, sugere flutuação */
+@keyframes ring-tilt-wobble {
+  0%, 100% { transform: rotateX(72deg) rotateY(0deg); }
+  50%      { transform: rotateX(68deg) rotateY(-3deg); }
+}
+@keyframes ring-floor-pulse {
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1;    transform: translateX(-50%) scale(1.08); }
 }
 
 /* ---- Acessibilidade · respeita prefers-reduced-motion ---- */
 @media (prefers-reduced-motion: reduce) {
-  .ring-3d, .ring-3d__halo { animation: none; }
+  .ring-3d,
+  .ring-3d__base,
+  .ring-3d__shine,
+  .ring-3d__floor-glow {
+    animation: none;
+  }
 }
 
 /* ---- Mobile · oculta a viz (compete com tipografia em telas estreitas) ---- */

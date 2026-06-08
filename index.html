@@ -74,26 +74,21 @@
       </div>
 
       <!-- ===========================================================
-           Elemento visual · anel 3D com aberração cromática
-           Inspirado em efeitos de luz refratada (Apple Vision Pro).
-           Estrutura de divs com conic-gradient + radial mask + blur,
-           rotacionando continuamente. Múltiplas camadas com hue-rotate
-           e blend modes simulam separação RGB realista de prisma.
+           Elemento visual · anel 3D em perspectiva oblíqua
+           Inspiração: torus cromado tilted em rotação contínua.
+           Tons de branco quente + cream + ouro (sem espectro RGB).
+           CSS 3D transform: perspective + rotateX recria o ângulo
+           de visão lateral; rotateZ contínuo faz a luz percorrer.
            =========================================================== -->
       <div class="intro__viz" aria-hidden="true">
-        <div class="ring-3d">
-          <!-- Halo difuso externo · respiração luminosa -->
-          <div class="ring-3d__halo"></div>
-          <!-- Anel base com gradiente espectral (camada principal) -->
-          <div class="ring-3d__spectrum"></div>
-          <!-- Aberração cromática · cópia deslocada em vermelho -->
-          <div class="ring-3d__spectrum ring-3d__spectrum--r"></div>
-          <!-- Aberração cromática · cópia deslocada em azul -->
-          <div class="ring-3d__spectrum ring-3d__spectrum--b"></div>
-          <!-- Highlight especular branco · simula reflexão de luz -->
-          <div class="ring-3d__highlight"></div>
-          <!-- Sombra interna · dá profundidade volumétrica -->
-          <div class="ring-3d__shadow"></div>
+        <div class="ring-3d-stage">
+          <div class="ring-3d">
+            <div class="ring-3d__base"></div>
+            <div class="ring-3d__shine"></div>
+            <div class="ring-3d__shine ring-3d__shine--alt"></div>
+            <div class="ring-3d__rim"></div>
+          </div>
+          <div class="ring-3d__floor-glow"></div>
         </div>
       </div>
     </section>
