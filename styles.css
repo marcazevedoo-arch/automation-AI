@@ -6486,19 +6486,18 @@ a:hover, button:hover, .nav__list a:hover {
 }
 
 /* ==========================================================================
-   CAPA · ELEMENTO VISUAL BAUHAUS (intro__viz)
-   Composição geométrica animada à direita da capa que sugere IA
-   (rotações, pulso) e automação (ciclos, repetição).
-   Formas primárias Bauhaus: quadrado, círculo, triângulo + linhas.
-   Cor única: ouro matte (currentColor herda de .intro__viz · color: --accent).
+   CAPA · ELEMENTO VISUAL BAUHAUS · ONDA CONCÊNTRICA MINIMAL (intro__viz)
+   4 anéis concêntricos pulsam de dentro pra fora em stagger, sugerindo
+   processamento contínuo (IA) + cadência rítmica (automação).
+   Esteticamente minimal — pulsar/radar elegante, sem ruído visual.
    ========================================================================== */
 .intro__viz {
   position: absolute;
   top: 50%;
   right: var(--space-7);
   transform: translateY(-50%);
-  width: clamp(280px, 32vw, 460px);
-  height: clamp(280px, 32vw, 460px);
+  width: clamp(220px, 24vw, 360px);
+  height: clamp(220px, 24vw, 360px);
   color: var(--accent);
   pointer-events: none;
   z-index: 0;
@@ -6511,82 +6510,62 @@ a:hover, button:hover, .nav__list a:hover {
   overflow: visible;
 }
 
-/* ---- Anéis · rotação contínua oposta (estilo automação) ---- */
-.viz-ring--outer {
+/* ---- Anéis concêntricos · pulsam do centro pra fora ----
+   Cada anel cresce, fade out e reinicia. Stagger nos delays cria
+   o efeito de onda contínua. Origem do transform: centro do SVG. */
+.viz-wave {
   transform-origin: 200px 200px;
-  animation: viz-spin 60s linear infinite;
+  animation: viz-wave-pulse 4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
-.viz-ring--mid {
+.viz-wave--1 { animation-delay: 0s; }
+.viz-wave--2 { animation-delay: 0.4s; }
+.viz-wave--3 { animation-delay: 0.8s; }
+.viz-wave--4 { animation-delay: 1.2s; }
+
+/* ---- Núcleo central · pulse rítmico (origem da onda) ---- */
+.viz-core {
   transform-origin: 200px 200px;
-  animation: viz-spin-reverse 90s linear infinite;
-}
-
-/* ---- Quadrado superior · ciclos de 4s (automação · cadência) ---- */
-.viz-square {
-  transform-origin: 200px 50px;
-  animation: viz-pulse-scale 4s ease-in-out infinite;
-}
-
-/* ---- Triângulo inferior · respiração lenta ---- */
-.viz-tri {
-  transform-origin: 200px 350px;
-  animation: viz-pulse-opacity 5s ease-in-out infinite;
-}
-
-/* ---- Pulso radial · expande do centro (data flow) ---- */
-.viz-pulse {
-  transform-origin: 200px 200px;
-  animation: viz-pulse-radial 3.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-/* ---- Pontos orbitais ---- */
-.viz-orbit {
-  transform-origin: 200px 200px;
-  animation: viz-spin 8s linear infinite;
-}
-.viz-orbit--reverse {
-  animation: viz-spin-reverse 13s linear infinite;
+  animation: viz-core-pulse 1.8s ease-in-out infinite;
 }
 
 /* ---- Keyframes ---- */
 @keyframes viz-fade-in {
-  from { opacity: 0; transform: translateY(-50%) scale(0.92); }
-  to   { opacity: 0.95; transform: translateY(-50%) scale(1); }
+  from { opacity: 0; transform: translateY(-50%) scale(0.96); }
+  to   { opacity: 1; transform: translateY(-50%) scale(1); }
 }
-@keyframes viz-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes viz-wave-pulse {
+  0%   { transform: scale(0.6); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 0.18; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
-@keyframes viz-spin-reverse {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
-}
-@keyframes viz-pulse-scale {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(0.78); opacity: 0.55; }
-}
-@keyframes viz-pulse-opacity {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.4; }
-}
-@keyframes viz-pulse-radial {
-  0%   { transform: scale(1);    opacity: 0.85; }
-  70%  { transform: scale(10);   opacity: 0; }
-  100% { transform: scale(10);   opacity: 0; }
+@keyframes viz-core-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.4); opacity: 0.6; }
 }
 
 /* ---- Acessibilidade · respeita prefers-reduced-motion ---- */
 @media (prefers-reduced-motion: reduce) {
-  .viz-ring--outer,
-  .viz-ring--mid,
-  .viz-square,
-  .viz-tri,
-  .viz-pulse,
-  .viz-orbit { animation: none; }
+  .viz-wave, .viz-core { animation: none; }
+  .viz-wave { opacity: 0.4; }
 }
 
 /* ---- Mobile · oculta a viz (compete com tipografia em telas estreitas) ---- */
 @media (max-width: 900px) {
   .intro__viz { display: none; }
+}
+
+/* ==========================================================================
+   CAPA · esconder o número fantasma "00" (pseudo ::before do main.deck)
+   A regra geral aplica ::before em todas as sections que não são cover/close.
+   Como sec-00 é section--intro (sem essas classes), recebia o "00" gigante
+   que colidia com o viz. Usamos !important porque a regra original tem
+   specificity 0,3,2 e o cascade não bastava.
+   ========================================================================== */
+.section--intro::before,
+main.deck > .section--intro::before,
+#sec-00::before {
+  content: none !important;
+  display: none !important;
 }
 
