@@ -5260,14 +5260,14 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
 .phase-step--accent .phase-step__title { color: var(--accent); }
 
 /* phase-step--reveal · destaque forte para etapas-chave de receita (ex.: SaaS no slide 8).
-   Mais espesso que --accent, com background sutil, badge superior e título maior. */
+   Border-top accent + background sutil + badge ancorado no canto inferior do bloco. */
 .phase-step--reveal {
   position: relative;
   border-top-width: 2px;
   border-top-color: var(--accent);
   background: linear-gradient(180deg, var(--accent-dim) 0%, transparent 70%);
-  padding-top: calc(var(--space-5) + 18px);
   padding-left: var(--space-4);
+  padding-bottom: calc(var(--space-5) + 30px);
 }
 .phase-step--reveal .phase-step__week,
 .phase-step--reveal .phase-step__title { color: var(--accent); }
@@ -5277,7 +5277,7 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
 
 .phase-step__badge {
   position: absolute;
-  top: var(--space-3);
+  bottom: var(--space-4);
   left: var(--space-4);
   font-family: var(--font-m);
   font-size: 0.7rem;
@@ -5899,7 +5899,6 @@ main.deck > .section:not(.section--cover):not(.section--close)::before {
 
 /* Numerais tabulares · valores em tabelas e células de cálculo */
 .calc-row__val,
-.dept-list .dept-list__name,
 .auto-table td,
 .stat__num,
 .wave-step__econ,
