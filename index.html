@@ -74,22 +74,27 @@
       </div>
 
       <!-- ===========================================================
-           Elemento visual Bauhaus · onda concêntrica minimal
-           Quatro anéis pulsam de dentro pra fora em stagger, sugerindo
-           processamento contínuo de dados (IA) + cadência (automação).
-           SVG inline, animação CSS, esconde em mobile.
+           Elemento visual · anel 3D com aberração cromática
+           Inspirado em efeitos de luz refratada (Apple Vision Pro).
+           Estrutura de divs com conic-gradient + radial mask + blur,
+           rotacionando continuamente. Múltiplas camadas com hue-rotate
+           e blend modes simulam separação RGB realista de prisma.
            =========================================================== -->
       <div class="intro__viz" aria-hidden="true">
-        <svg class="intro__viz-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Onda concêntrica representando IA e automação">
-          <!-- Anéis concêntricos · pulsam de dentro pra fora -->
-          <circle class="viz-wave viz-wave--1" cx="200" cy="200" r="40"  fill="none" stroke="currentColor" stroke-width="2"/>
-          <circle class="viz-wave viz-wave--2" cx="200" cy="200" r="80"  fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle class="viz-wave viz-wave--3" cx="200" cy="200" r="130" fill="none" stroke="currentColor" stroke-width="1"/>
-          <circle class="viz-wave viz-wave--4" cx="200" cy="200" r="180" fill="none" stroke="currentColor" stroke-width="1"/>
-
-          <!-- Núcleo central · ouro sólido (origem da onda) -->
-          <circle class="viz-core" cx="200" cy="200" r="10" fill="currentColor"/>
-        </svg>
+        <div class="ring-3d">
+          <!-- Halo difuso externo · respiração luminosa -->
+          <div class="ring-3d__halo"></div>
+          <!-- Anel base com gradiente espectral (camada principal) -->
+          <div class="ring-3d__spectrum"></div>
+          <!-- Aberração cromática · cópia deslocada em vermelho -->
+          <div class="ring-3d__spectrum ring-3d__spectrum--r"></div>
+          <!-- Aberração cromática · cópia deslocada em azul -->
+          <div class="ring-3d__spectrum ring-3d__spectrum--b"></div>
+          <!-- Highlight especular branco · simula reflexão de luz -->
+          <div class="ring-3d__highlight"></div>
+          <!-- Sombra interna · dá profundidade volumétrica -->
+          <div class="ring-3d__shadow"></div>
+        </div>
       </div>
     </section>
 
