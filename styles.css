@@ -5259,6 +5259,37 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
 .phase-step--accent .phase-step__week,
 .phase-step--accent .phase-step__title { color: var(--accent); }
 
+/* phase-step--reveal · destaque forte para etapas-chave de receita (ex.: SaaS no slide 8).
+   Mais espesso que --accent, com background sutil, badge superior e título maior. */
+.phase-step--reveal {
+  position: relative;
+  border-top-width: 2px;
+  border-top-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent-dim) 0%, transparent 70%);
+  padding-top: calc(var(--space-5) + 18px);
+  padding-left: var(--space-4);
+}
+.phase-step--reveal .phase-step__week,
+.phase-step--reveal .phase-step__title { color: var(--accent); }
+.phase-step--reveal .phase-step__title { font-size: 1.05rem; }
+.phase-step--reveal .phase-step__detail { color: var(--t2); }
+.phase-step--reveal .phase-step__detail strong { color: var(--t1); }
+
+.phase-step__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  font-family: var(--font-m);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--accent-soft);
+}
+
 .phase-step__week {
   display: block;
   font-family: var(--font-editorial);
