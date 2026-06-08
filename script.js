@@ -554,33 +554,13 @@
      Init
      ------------------------------------------------------------------------ */
   /* ------------------------------------------------------------------------
-     9. Magnet hover — pequeno deslocamento dos elementos .magnet
-        em direção ao cursor. Toque/touchscreen ignorado.
+     9. Magnet hover — DESATIVADO por solicitação (jun/2026).
+        Listeners não são mais registrados. Os atributos data-magnet
+        permanecem no HTML mas são inertes; o CSS .magnet:hover também
+        foi neutralizado em styles.css.
      ------------------------------------------------------------------------ */
   function initMagnet() {
-    if (reducedMotion) return;
-    if (matchMedia('(hover: none)').matches) return;
-
-    const els = $$('.magnet');
-    if (!els.length) return;
-
-    const STRENGTH = 0.18; // 18% do delta cursor-centro
-
-    els.forEach(el => {
-      el.addEventListener('mousemove', (e) => {
-        const r = el.getBoundingClientRect();
-        const cx = r.left + r.width / 2;
-        const cy = r.top + r.height / 2;
-        const dx = (e.clientX - cx) * STRENGTH;
-        const dy = (e.clientY - cy) * STRENGTH;
-        el.style.setProperty('--mx', dx.toFixed(1));
-        el.style.setProperty('--my', dy.toFixed(1));
-      });
-      el.addEventListener('mouseleave', () => {
-        el.style.setProperty('--mx', '0');
-        el.style.setProperty('--my', '0');
-      });
-    });
+    return;
   }
 
   /* ------------------------------------------------------------------------

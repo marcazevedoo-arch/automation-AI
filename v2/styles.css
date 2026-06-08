@@ -4997,13 +4997,14 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
   margin-bottom: var(--space-2);
 }
 
-/* Magnet · elemento sutilmente atraído pelo cursor (JS aplica --mx --my) */
-.magnet {
-  transition: transform 320ms var(--ease-out);
-  will-change: transform;
-}
+/* Magnet · DESATIVADO (jun/2026). Mantemos a classe declarada como no-op
+   para que o atributo class="magnet" no HTML não cause erros visuais.
+   O JS de initMagnet() também foi neutralizado em script.js. */
+.magnet,
 .magnet:hover {
-  transform: translate3d(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px), 0);
+  transition: none;
+  transform: none !important;
+  will-change: auto;
 }
 
 /* ---- SLIDE 2 · Diagnóstico (4 itens editoriais) ---- */
