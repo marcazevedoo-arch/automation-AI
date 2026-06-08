@@ -2857,7 +2857,7 @@ ul, ol { list-style: none; }
   height: 4px;
   width: calc(var(--pct, 0) * 1%);
   min-width: 60px;
-  background: var(--t4, #3A3A3C);
+  background: var(--t4, #3D3D3D);
   border-radius: 99px;
   transition: width 1.2s var(--ease-out);
   flex-shrink: 0;
@@ -3209,7 +3209,7 @@ ul, ol { list-style: none; }
 }
 
 .ask:hover .ask__bignum {
-  -webkit-text-stroke: 1px rgba(78, 54, 237, 0.18);
+  -webkit-text-stroke: 1px rgba(201, 169, 97, 0.18);
   transform: translateY(-2px);
 }
 
@@ -3450,7 +3450,7 @@ main.deck > .section.is-current {
   justify-content: center;
   font-family: var(--font-m);
   font-size: 9px;
-  color: var(--t4, #3A3A3C);
+  color: var(--t4, #3D3D3D);
   letter-spacing: 0.04em;
 }
 
@@ -3477,7 +3477,7 @@ main.deck > .section.is-current {
 
 .deck-hud__frame.is-past {
   border-color: var(--accent-soft);
-  background: rgba(78, 54, 237, 0.04);
+  background: rgba(201, 169, 97, 0.04);
   color: var(--accent-soft);
 }
 
@@ -3534,7 +3534,7 @@ main.deck > .section.is-current {
 }
 
 .deck-hud__sep {
-  color: var(--t4, #3A3A3C);
+  color: var(--t4, #3D3D3D);
   padding: 0 4px;
 }
 
@@ -4602,7 +4602,7 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
   scrollbar-width: none;
   /* gradient sutilíssimo radial para dar profundidade */
   background-image:
-    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(78, 54, 237, 0.06), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201, 169, 97, 0.06), transparent 70%),
     radial-gradient(ellipse 90% 70% at 50% 100%, rgba(255, 255, 255, 0.02), transparent 60%);
 }
 .toc::-webkit-scrollbar { display: none; }
@@ -4827,7 +4827,7 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
   font-weight: 300;
   font-style: italic;
   color: var(--accent-soft);
-  border-bottom: 1px dashed rgba(78, 54, 237, 0.4);
+  border-bottom: 1px dashed rgba(201, 169, 97, 0.4);
   padding-bottom: 1px;
   letter-spacing: -0.005em;
 }
@@ -5977,7 +5977,7 @@ main.deck > .section:not(.section--cover):not(.section--close)::before {
   font-size: clamp(16px, 1.8vw, 22px);
   letter-spacing: -0.01em;
   color: var(--accent-soft);
-  border-bottom: 1px dashed rgba(78, 54, 237, 0.35);
+  border-bottom: 1px dashed rgba(201, 169, 97, 0.35);
   padding-bottom: 2px;
 }
 
@@ -6418,5 +6418,70 @@ a:hover, button:hover, .nav__list a:hover {
   border: 1px solid var(--t4);
   padding: var(--space-6);
   background: transparent;
+}
+
+/* ==========================================================================
+   SLIDE 22 · PENDING-LIST · pendências numeradas com separadores em ouro
+   Estética: grid 8px, separador horizontal accent (2px), tipografia geométrica.
+   ========================================================================== */
+.pending-list {
+  margin: var(--space-7) 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--accent);  /* abertura · linha ouro Bauhaus */
+}
+.pending-item {
+  display: grid;
+  grid-template-columns: 96px 1fr 160px;
+  gap: var(--space-5);
+  align-items: baseline;
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--accent);  /* separador entre itens */
+}
+.pending-item:last-child {
+  border-bottom: 2px solid var(--accent);  /* fechamento · espelha a abertura */
+}
+.pending-item__num {
+  font-family: var(--font-editorial);
+  font-weight: 300;
+  font-size: clamp(36px, 4vw, 56px);
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.pending-item__body { min-width: 0; }
+.pending-item__title {
+  font-family: var(--font-d);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--t1);
+  margin-bottom: var(--space-2);
+}
+.pending-item__desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--t2);
+}
+.pending-item__timing {
+  font-family: var(--font-m);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .pending-item {
+    grid-template-columns: 56px 1fr;
+    gap: var(--space-3);
+  }
+  .pending-item__timing {
+    grid-column: 2;
+    text-align: left;
+    margin-top: var(--space-1);
+  }
 }
 

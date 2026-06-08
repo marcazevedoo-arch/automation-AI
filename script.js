@@ -309,7 +309,8 @@
       '18': 'Governança · Dia 1',
       '19': 'Liderança interna',
       '20': 'Os três pedidos',
-      '21': 'Decisão de arquitetura'
+      '21': 'Decisão de arquitetura',
+      '22': 'Pendências estratégicas'
     };
 
     // -------------------- Componente 1 · Progress bar --------------------
