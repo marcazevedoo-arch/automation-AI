@@ -72,6 +72,60 @@
           <span class="intro__page">00 / 22</span>
         </footer>
       </div>
+
+      <!-- ===========================================================
+           Elemento visual Bauhaus · composição geométrica animada
+           Círculo (AI · processamento) + quadrado (automação · ciclos)
+           + grid de pontos (data flow) + linhas (sistema).
+           SVG inline, animação SMIL (sem JS), esconde em mobile.
+           =========================================================== -->
+      <div class="intro__viz" aria-hidden="true">
+        <svg class="intro__viz-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Composição geométrica representando IA e automação">
+          <!-- Quadrado base (sistema/automação) -->
+          <rect x="40" y="40" width="320" height="320" fill="none" stroke="currentColor" stroke-width="2"/>
+
+          <!-- Hairlines diagonais Bauhaus (corte assimétrico) -->
+          <line x1="40" y1="40" x2="360" y2="360" stroke="currentColor" stroke-width="1" opacity="0.18"/>
+          <line x1="360" y1="40" x2="40" y2="360" stroke="currentColor" stroke-width="1" opacity="0.18"/>
+
+          <!-- Anel orbital · rotação contínua (processamento) -->
+          <g class="viz-ring viz-ring--outer">
+            <circle cx="200" cy="200" r="130" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 8" opacity="0.5"/>
+          </g>
+
+          <!-- Círculo médio · AI core -->
+          <g class="viz-ring viz-ring--mid">
+            <circle cx="200" cy="200" r="90" fill="none" stroke="currentColor" stroke-width="2"/>
+            <!-- Quadrantes (estrutura geométrica Bauhaus) -->
+            <line x1="200" y1="110" x2="200" y2="290" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+            <line x1="110" y1="200" x2="290" y2="200" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          </g>
+
+          <!-- Núcleo central · ouro sólido (data point) -->
+          <circle cx="200" cy="200" r="14" fill="currentColor"/>
+
+          <!-- Quadrado pequeno deslocado (automação · repetição) -->
+          <g class="viz-square">
+            <rect x="185" y="35" width="30" height="30" fill="currentColor"/>
+          </g>
+
+          <!-- Triângulo Bauhaus (terceira forma primária) -->
+          <g class="viz-tri">
+            <polygon points="200,335 220,365 180,365" fill="none" stroke="currentColor" stroke-width="2"/>
+          </g>
+
+          <!-- Pulso radial · expande do centro (data flow) -->
+          <circle class="viz-pulse" cx="200" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+
+          <!-- Pontos orbitais ao redor do anel médio -->
+          <g class="viz-orbit">
+            <circle cx="200" cy="110" r="5" fill="currentColor"/>
+          </g>
+          <g class="viz-orbit viz-orbit--reverse">
+            <circle cx="290" cy="200" r="4" fill="currentColor" opacity="0.7"/>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <!-- ============================================================ -->

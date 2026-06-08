@@ -6485,3 +6485,108 @@ a:hover, button:hover, .nav__list a:hover {
   }
 }
 
+/* ==========================================================================
+   CAPA · ELEMENTO VISUAL BAUHAUS (intro__viz)
+   Composição geométrica animada à direita da capa que sugere IA
+   (rotações, pulso) e automação (ciclos, repetição).
+   Formas primárias Bauhaus: quadrado, círculo, triângulo + linhas.
+   Cor única: ouro matte (currentColor herda de .intro__viz · color: --accent).
+   ========================================================================== */
+.intro__viz {
+  position: absolute;
+  top: 50%;
+  right: var(--space-7);
+  transform: translateY(-50%);
+  width: clamp(280px, 32vw, 460px);
+  height: clamp(280px, 32vw, 460px);
+  color: var(--accent);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: viz-fade-in 1200ms var(--ease-out) 600ms forwards;
+}
+.intro__viz-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---- Anéis · rotação contínua oposta (estilo automação) ---- */
+.viz-ring--outer {
+  transform-origin: 200px 200px;
+  animation: viz-spin 60s linear infinite;
+}
+.viz-ring--mid {
+  transform-origin: 200px 200px;
+  animation: viz-spin-reverse 90s linear infinite;
+}
+
+/* ---- Quadrado superior · ciclos de 4s (automação · cadência) ---- */
+.viz-square {
+  transform-origin: 200px 50px;
+  animation: viz-pulse-scale 4s ease-in-out infinite;
+}
+
+/* ---- Triângulo inferior · respiração lenta ---- */
+.viz-tri {
+  transform-origin: 200px 350px;
+  animation: viz-pulse-opacity 5s ease-in-out infinite;
+}
+
+/* ---- Pulso radial · expande do centro (data flow) ---- */
+.viz-pulse {
+  transform-origin: 200px 200px;
+  animation: viz-pulse-radial 3.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* ---- Pontos orbitais ---- */
+.viz-orbit {
+  transform-origin: 200px 200px;
+  animation: viz-spin 8s linear infinite;
+}
+.viz-orbit--reverse {
+  animation: viz-spin-reverse 13s linear infinite;
+}
+
+/* ---- Keyframes ---- */
+@keyframes viz-fade-in {
+  from { opacity: 0; transform: translateY(-50%) scale(0.92); }
+  to   { opacity: 0.95; transform: translateY(-50%) scale(1); }
+}
+@keyframes viz-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes viz-spin-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes viz-pulse-scale {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.78); opacity: 0.55; }
+}
+@keyframes viz-pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+@keyframes viz-pulse-radial {
+  0%   { transform: scale(1);    opacity: 0.85; }
+  70%  { transform: scale(10);   opacity: 0; }
+  100% { transform: scale(10);   opacity: 0; }
+}
+
+/* ---- Acessibilidade · respeita prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .viz-ring--outer,
+  .viz-ring--mid,
+  .viz-square,
+  .viz-tri,
+  .viz-pulse,
+  .viz-orbit { animation: none; }
+}
+
+/* ---- Mobile · oculta a viz (compete com tipografia em telas estreitas) ---- */
+@media (max-width: 900px) {
+  .intro__viz { display: none; }
+}
+
