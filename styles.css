@@ -5063,7 +5063,7 @@ main.deck > .section .section__header { margin-bottom: var(--space-6); }
   padding: var(--space-6) 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  align-items: end;
+  align-items: start;
 }
 .stat-confront__num {
   font-family: var(--font-editorial);
