@@ -6,6 +6,12 @@
 (function () {
   'use strict';
 
+  // Bypass SSO em ambiente local — nunca bloqueia preview/desenvolvimento
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    console.info('[galeria-sso] localhost detectado — SSO desativado para preview.');
+    return;
+  }
+
   var HUB_URL     = 'https://galeria-os.web.app';
   var TOKEN_KEY   = 'galeria_hub_token';
   var TIMEOUT_MS  = 6000; // 6 s — prazo para o hub responder
